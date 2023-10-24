@@ -1,0 +1,9 @@
+Assets/Events/PlayerMovement.asset
+Assets/Events/HEnemyManager.asset
+Assets/Events/EnemyManager.asset
+Assets/Events/PlayerDeath.asset
+Assets/Events/PlayerShooting.asset
+Assets/Events/Damage.asset
+Assets/Events/EnemyAttack.asset
+Assets/Events/EnemyDeath.asset
+Assets/Events/EnemyMovement.asset
