@@ -15,7 +15,7 @@ public class TankHealth : MonoBehaviour, IHealth
     private ParticleSystem m_ExplosionParticles;        // The particle system the will play when the tank is destroyed.
     private float m_CurrentHealth;                      // How much health the tank currently has.
     private bool m_Dead;                                // Has the tank been reduced beyond zero health yet?
-
+    private bool hitDetected = false;
 
     private void Awake ()
     {
@@ -40,6 +40,10 @@ public class TankHealth : MonoBehaviour, IHealth
         SetHealthUI();
     }
 
+    public float GetCurrentHealth()
+    {
+        return m_CurrentHealth;
+    }
 
     public void TakeDamage(int amount, Vector3 hitPoint)
     {
@@ -49,6 +53,8 @@ public class TankHealth : MonoBehaviour, IHealth
         // Change the UI elements appropriately.
         SetHealthUI ();
 
+        hitDetected = true;
+
         // If the current health is at or below zero and it has not yet been registered, call OnDeath.
         if (m_CurrentHealth <= 0f && !m_Dead)
         {
@@ -56,6 +62,10 @@ public class TankHealth : MonoBehaviour, IHealth
         }
     }
 
+    public bool HasHitDetecred()
+    {
+        return hitDetected;
+    }
 
     private void SetHealthUI ()
     {

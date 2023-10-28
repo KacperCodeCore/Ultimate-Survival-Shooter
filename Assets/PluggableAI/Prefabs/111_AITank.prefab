@@ -10270,7 +10270,7 @@ GameObject:
   - component: {fileID: 11488788}
   - component: {fileID: 2106398000529361104}
   m_Layer: 9
-  m_Name: AITankScaner
+  m_Name: 111_AITank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10605,7 +10605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: 7d36427061c3c3341b14c5ddc05b51b6, type: 2}
   eyes: {fileID: 4487636023762108}
-  currentState: {fileID: 11400000, guid: edd44c793f4fcb14f9ace1e799e85a87, type: 2}
+  currentState: {fileID: 11400000, guid: 301fe967b230a9d49a3fbe32c691b958, type: 2}
   _patrolPointContainer: {fileID: 0}
   navMeshAgent: {fileID: 0}
   tankShooting: {fileID: 0}
