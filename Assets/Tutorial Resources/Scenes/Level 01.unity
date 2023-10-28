@@ -3047,6 +3047,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AITankChaser
       objectReference: {fileID: 0}
+    - target: {fileID: 173472, guid: 7ff6571596052b34c9b5fc1ce3fd7244, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 446194, guid: 7ff6571596052b34c9b5fc1ce3fd7244, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.63
@@ -3057,7 +3061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 446194, guid: 7ff6571596052b34c9b5fc1ce3fd7244, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.87
+      value: 4.99
       objectReference: {fileID: 0}
     - target: {fileID: 446194, guid: 7ff6571596052b34c9b5fc1ce3fd7244, type: 3}
       propertyPath: m_LocalRotation.w
