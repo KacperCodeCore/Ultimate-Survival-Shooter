@@ -12,6 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1558871d9791c4ca5b0f2c2b899d95, type: 3}
   m_Name: S2_Chase
   m_EditorClassIdentifier: 
-  actions: []
-  transitions: []
-  sceneGizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  actions:
+  - {fileID: 11400000, guid: b83f2c8a1944ace47ba6778b4c599b3d, type: 2}
+  - {fileID: 11400000, guid: 47fa251423dea35479d234b646776220, type: 2}
+  transitions:
+  - decision: {fileID: 11400000, guid: d1e40accb4b092e41845d05c691ab836, type: 2}
+    trueState: {fileID: 0}
+    falseState: {fileID: 11400000, guid: af5808f9886717d459a438f03777b1db, type: 2}
+  - decision: {fileID: 11400000, guid: a5c24064a6b061e4f917e309ed89f90d, type: 2}
+    trueState: {fileID: 0}
+    falseState: {fileID: 11400000, guid: aa50a4ae909bb2f458aa8aa34b2c43fc, type: 2}
+  sceneGizmoColor: {r: 1, g: 0, b: 0, a: 1}

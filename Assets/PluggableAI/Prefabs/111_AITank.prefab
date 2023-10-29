@@ -10610,6 +10610,7 @@ MonoBehaviour:
   navMeshAgent: {fileID: 0}
   tankShooting: {fileID: 0}
   wayPointList: []
+  tankHealth: {fileID: 0}
   nextWayPoint: 0
   chaseTarget: {fileID: 0}
   stateTimeElapsed: 0

@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1558871d9791c4ca5b0f2c2b899d95, type: 3}
   m_Name: S3_RunAway
   m_EditorClassIdentifier: 
-  actions: []
-  transitions: []
-  sceneGizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  actions:
+  - {fileID: 11400000, guid: bff2ef9c869a20a4c81392b1fb1219b4, type: 2}
+  - {fileID: 11400000, guid: 75193e978c1b4f3489ba79fd7373aa10, type: 2}
+  transitions:
+  - decision: {fileID: 11400000, guid: d1e40accb4b092e41845d05c691ab836, type: 2}
+    trueState: {fileID: 11400000, guid: aa50a4ae909bb2f458aa8aa34b2c43fc, type: 2}
+    falseState: {fileID: 0}
+  sceneGizmoColor: {r: 0, g: 0, b: 0, a: 1}

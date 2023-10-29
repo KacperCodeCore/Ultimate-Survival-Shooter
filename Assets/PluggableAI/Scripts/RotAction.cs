@@ -13,6 +13,7 @@ public class RotAction : Action
 
     private void Rotate360Degrees(StateController controller)
     {
+        controller.navMeshAgent.isStopped = true;
         controller.transform.Rotate(0, controller.enemyStats.searchingTurnSpeed * Time.deltaTime, 0);
     }
 }

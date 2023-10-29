@@ -44,6 +44,10 @@ public class TankHealth : MonoBehaviour, IHealth
     {
         return m_CurrentHealth;
     }
+    public void SetCurrentHealth(float health)
+    {
+        m_CurrentHealth = health;
+    }
 
     public void TakeDamage(int amount, Vector3 hitPoint)
     {
@@ -51,7 +55,7 @@ public class TankHealth : MonoBehaviour, IHealth
         m_CurrentHealth -= amount;
 
         // Change the UI elements appropriately.
-        SetHealthUI ();
+        SetHealthUI();
 
         hitDetected = true;
 
@@ -66,8 +70,12 @@ public class TankHealth : MonoBehaviour, IHealth
     {
         return hitDetected;
     }
+    public void ResetHitDetected()
+    {
+        hitDetected = false;
+    }
 
-    private void SetHealthUI ()
+    public void SetHealthUI ()
     {
         // Set the slider's value appropriately.
         m_Slider.value = m_CurrentHealth;

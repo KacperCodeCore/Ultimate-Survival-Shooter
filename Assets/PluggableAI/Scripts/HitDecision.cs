@@ -14,11 +14,7 @@ public class HitDecision : Decision
     private bool CheckHit(StateController controller)
     {
         bool isHitDetected = controller.tankHealth.HasHitDetecred();
-        if (isHitDetected)
-        {
-            Debug.Log("Trafienie w czoło wykryte w HitDecision!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            //controller.tankHealth.hitDetected = false;
-        }
+        controller.tankHealth.ResetHitDetected();
         return isHitDetected;
     }
 }
