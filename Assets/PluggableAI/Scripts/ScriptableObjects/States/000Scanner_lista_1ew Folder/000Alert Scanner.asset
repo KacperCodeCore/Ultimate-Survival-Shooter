@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd1558871d9791c4ca5b0f2c2b899d95, type: 3}
-  m_Name: Alert chaser
+  m_Name: 000Alert Scanner
   m_EditorClassIdentifier: 
   actions: []
   transitions:
   - decision: {fileID: 11400000, guid: a5c24064a6b061e4f917e309ed89f90d, type: 2}
-    trueState: {fileID: 11400000, guid: c46a4f5fbbf4b7d479215218d68f475c, type: 2}
+    trueState: {fileID: 11400000, guid: 963481e793c051848b67eadb2d490514, type: 2}
     falseState: {fileID: 0}
   - decision: {fileID: 11400000, guid: 23f2f919bf02a5d468f9870198db8bd2, type: 2}
-    trueState: {fileID: 11400000, guid: edd44c793f4fcb14f9ace1e799e85a87, type: 2}
+    trueState: {fileID: 11400000, guid: a03ac33c3e8284348b80b3b115015083, type: 2}
     falseState: {fileID: 0}
-  sceneGizmoColor: {r: 0.9995657, g: 1, b: 0, a: 1}
+  sceneGizmoColor: {r: 1, g: 0.83824074, b: 0, a: 1}

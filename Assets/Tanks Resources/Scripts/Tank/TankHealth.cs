@@ -17,6 +17,41 @@ public class TankHealth : MonoBehaviour, IHealth
     private bool m_Dead;                                // Has the tank been reduced beyond zero health yet?
     private bool hitDetected = false;
 
+    float IHealth.CurrentHealth
+    {
+        get
+        {
+            return m_CurrentHealth;
+        }
+    }
+    float IHealth.HealAmount
+    {
+        set
+        {
+            m_CurrentHealth = value;
+        }
+    }
+    public bool HasHitDetecred
+    {
+        get
+        {
+            return hitDetected;
+        }
+        set
+        {
+            hitDetected = true;
+        }
+    }
+    //void IHealth.ResetHitDetected()
+    //{
+    //    set
+    //    {
+    //        hitDetected = false;
+    //    }
+    //}
+
+    //bool IHealth.HasHitDetecred { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
     private void Awake ()
     {
         // Instantiate the explosion prefab and get a reference to the particle system on it.
@@ -40,16 +75,7 @@ public class TankHealth : MonoBehaviour, IHealth
         SetHealthUI();
     }
 
-    public float GetCurrentHealth()
-    {
-        return m_CurrentHealth;
-    }
-    public void SetCurrentHealth(float health)
-    {
-        m_CurrentHealth = health;
-    }
-
-    public void TakeDamage(int amount, Vector3 hitPoint)
+    void IHealth.TakeDamage(int amount, Vector3 hitPoint)
     {
         // Reduce current health by the amount of damage done.
         m_CurrentHealth -= amount;
@@ -64,15 +90,6 @@ public class TankHealth : MonoBehaviour, IHealth
         {
             OnDeath ();
         }
-    }
-
-    public bool HasHitDetecred()
-    {
-        return hitDetected;
-    }
-    public void ResetHitDetected()
-    {
-        hitDetected = false;
     }
 
     public void SetHealthUI ()

@@ -39,12 +39,13 @@ namespace Complete
 
                 // Find the TankHealth script associated with the rigidbody.
                 //TankHealth targetHealth = targetRigidbody.GetComponent<TankHealth> ();
-                PlayerHealth playerHealth = targetRigidbody.GetComponent<PlayerHealth>();
-                ZombieHealth zombieHealth = targetRigidbody.GetComponent<ZombieHealth>();
+                IHealth health = targetRigidbody.GetComponent<IHealth>();
+                //ZombieHealth zombieHealth = targetRigidbody.GetComponent<ZombieHealth>();
 
                 // If there is no TankHealth script attached to the gameobject, go on to the next collider.
                 // !targetHealth || 
-                if (!playerHealth)
+                //if (!health)
+                if (health == null)
                     continue;
 
                 // Calculate the amount of damage the target should take based on it's distance from the shell.
@@ -52,21 +53,21 @@ namespace Complete
 
                 // Deal this damage to the tank.
                 //targetHealth.TakeDamage (10, targetHealth.transform.position);
-                playerHealth.TakeDamage(10, playerHealth.transform.position);
+                health.TakeDamage(10, transform.position);
             }
 
             // Unparent the particles from the shell.
-            m_ExplosionParticles.transform.parent = null;
-
+            //m_ExplosionParticles.transform.parent = null;
+            var particle = Instantiate(m_ExplosionParticles, transform.position, new Quaternion());
             // Play the particle system.
-            m_ExplosionParticles.Play();
+            particle.Play();
 
             // Play the explosion sound effect.
             //m_ExplosionAudio.Play();
 
             // Once the particles have finished, destroy the gameobject they are on.
-            ParticleSystem.MainModule mainModule = m_ExplosionParticles.main;
-            Destroy (m_ExplosionParticles.gameObject, mainModule.duration);
+            ParticleSystem.MainModule mainModule = particle.main;
+            Destroy (particle.gameObject, mainModule.duration);
 
             // Destroy the shell.
             Destroy (gameObject);

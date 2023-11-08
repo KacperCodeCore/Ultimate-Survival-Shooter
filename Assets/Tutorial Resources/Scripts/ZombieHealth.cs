@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ZombieHealth : MonoBehaviour, IHealth
 {
     public int startingHealth = 100;            // The amount of health the enemy starts the game with.
-    public int currentHealth;                   // The current health the enemy has.
+    public float currentHealth;                   // The current health the enemy has.
     public float sinkSpeed = 2.5f;              // The speed at which the enemy sinks through the floor when dead.
     public int scoreValue = 10;                 // The amount added to the player's score when the enemy dies.
     public AudioClip deathClip;                 // The sound to play when the enemy dies.
@@ -23,6 +23,20 @@ public class ZombieHealth : MonoBehaviour, IHealth
     bool isSinking;                             // Whether the enemy has started sinking through the floor.
     AudioSource enemyAudio;
 
+    float IHealth.CurrentHealth
+    {
+        get
+        {
+            return currentHealth;
+        }
+    }
+    float IHealth.HealAmount
+    {
+        set
+        {
+            currentHealth = value;
+        }
+    }
 
     void Awake()
     {

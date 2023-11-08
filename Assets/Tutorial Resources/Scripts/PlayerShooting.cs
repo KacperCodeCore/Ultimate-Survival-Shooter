@@ -18,6 +18,7 @@ public class PlayerShooting : MonoBehaviour
     float effectsDisplayTime = 0.2f;                // The proportion of the timeBetweenBullets that the effects will display for.
     AudioSource gunAudio;
 
+
     void Awake()
     {
         // Create a layer mask for the Shootable layer.
@@ -83,19 +84,21 @@ public class PlayerShooting : MonoBehaviour
         if (Physics.Raycast(shootRay, out shootHit, range, shootableMask))
         {
             // Try and find an EnemyHealth script on the gameobject hit.
-            ZombieHealth enemyHealth = shootHit.collider.GetComponent<ZombieHealth>();
-            TankHealth m_CurrentHealth = shootHit.collider.GetComponent<TankHealth>();
-            
+
+            //ZombieHealth enemyHealth = shootHit.collider.GetComponent<ZombieHealth>();
+            //TankHealth m_CurrentHealth = shootHit.collider.GetComponent<TankHealth>();
+            IHealth enemyHealth  = shootHit.collider.GetComponent<IHealth>();
+
             // If the EnemyHealth component exist...
             if (enemyHealth != null)
             {
                 // ... the enemy should take damage.
                 enemyHealth.TakeDamage(damagePerShot, shootHit.point);
             }
-            if (m_CurrentHealth != null)
-            {
-                m_CurrentHealth.TakeDamage(damagePerShot, shootHit.point);
-            }
+            //if (m_CurrentHealth != null)
+            //{
+            //    m_CurrentHealth. TakeDamage(damagePerShot, shootHit.point);
+            //}
 
             // Set the second position of the line renderer to the point the raycast hit.
             gunLine.SetPosition(1, shootHit.point);

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using Complete;
 
-public class StateController : MonoBehaviour 
+public class StateController : MonoBehaviour
 {
 	public EnemyStats enemyStats;
 	public Transform eyes;
@@ -16,11 +16,14 @@ public class StateController : MonoBehaviour
     [HideInInspector] public NavMeshAgent navMeshAgent;
 	[HideInInspector] public TankShooting tankShooting;
     [HideInInspector] public Transform[] wayPointList;
-    [HideInInspector] public TankHealth tankHealth;
+    [HideInInspector] public IHealth iTankHealth;
+    [HideInInspector] public TankHealth tankHealth;  // to do???
 
     [HideInInspector] public int nextWayPoint;
     [HideInInspector] public Transform chaseTarget;
     [HideInInspector] public float stateTimeElapsed;
+    [HideInInspector] public float currentRotation = 0;
+    [HideInInspector] public float lastRotation = 0;
 
     private bool aiActive;
     protected bool isHitDetected;
@@ -30,11 +33,13 @@ public class StateController : MonoBehaviour
 	{
 		tankShooting = GetComponent<TankShooting> ();
 		navMeshAgent = GetComponent<NavMeshAgent> ();
+        iTankHealth = GetComponent<TankHealth> ();
         tankHealth = GetComponent<TankHealth> ();
         SetupAI(true, _patrolPointContainer.GetComponentsInChildren<Transform>());
 	}
 
-	public void SetupAI(bool aiActivationFromTankManager, Transform[] wayPointsFromTankManager)
+
+    public void SetupAI(bool aiActivationFromTankManager, Transform[] wayPointsFromTankManager)
     {
         wayPointList = wayPointsFromTankManager;
         aiActive = aiActivationFromTankManager;
@@ -54,10 +59,10 @@ public class StateController : MonoBehaviour
             return;
         stateTimeElapsed += Time.deltaTime;
         currentState.UpdateState(this);
-        //if(tankHealth!= null )
-        //{
-        //    isHitDetected = tankHealth.HasHitDetecred();
-        //}
+        if (iTankHealth != null)
+        {
+            isHitDetected = tankHealth.HasHitDetecred; // to jest źle;
+        }
     }
 
     void OnDrawGizmos()

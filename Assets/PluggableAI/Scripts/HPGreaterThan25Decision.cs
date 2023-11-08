@@ -13,9 +13,9 @@ public class HPGreaterThan25Decision : Decision
 
     private bool CheckHP(StateController controller)
     {
-        if (controller.tankHealth != null)
+        if (controller.iTankHealth != null)
         {
-            return controller.tankHealth.GetCurrentHealth() > controller.tankHealth.m_StartingHealth * 0.45f;
+            return controller.iTankHealth.CurrentHealth > controller.iTankHealth.CurrentHealth * 0.45f;
         }
 
         return false;
