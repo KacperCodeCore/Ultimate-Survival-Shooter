@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     // The colour the damageImage is set to, to flash.
     public Slider healthSlider;
     public Image damageImage;
-    public bool hasHitDetecred = false;
+    //public bool hasHitDetecred = false;
 
     Animator anim;                                              // Reference to the Animator component.
     PlayerMovement playerMovement;                              // Reference to the player's movement.
@@ -37,17 +37,17 @@ public class PlayerHealth : MonoBehaviour, IHealth
         }
     }
 
-    public bool HasHitDetecred
-    {
-        get
-        {
-            return hasHitDetecred;
-        }
-         set
-        {
-            hasHitDetecred = value;
-        }
-    }
+    //public bool HasHitDetecred
+    //{
+    //    get
+    //    {
+    //        return hasHitDetecred;
+    //    }
+    //     set
+    //    {
+    //        hasHitDetecred = value;
+    //    }
+    //}
 
     void Awake()
     {
