@@ -29,25 +29,24 @@ public class PlayerHealth : MonoBehaviour, IHealth
         }
     }
 
-    float IHealth.HealAmount
+    float IHealth.MaxHealth
     {
-        set
+        get
         {
-            iHealth  = value;
+            return startingHealth;
         }
     }
 
-    //public bool HasHitDetecred
-    //{
-    //    get
-    //    {
-    //        return hasHitDetecred;
-    //    }
-    //     set
-    //    {
-    //        hasHitDetecred = value;
-    //    }
-    //}
+    void ChangeHp(float amount)
+    {
+        iHealth += amount;
+        healthSlider.value = iHealth;
+    }
+
+    public void HealAmount(float amount)
+    {
+        ChangeHp(amount);
+    }
 
     void Awake()
     {
@@ -80,14 +79,15 @@ public class PlayerHealth : MonoBehaviour, IHealth
     }
 
 
-    void IHealth.TakeDamage(int amount, Vector3 hitPoint)
+    void IHealth.TakeDamage(float amount, Vector3 hitPoint)
     {
         // Set the damaged flag so the screen will flash.
         damaged = true;
 
         // Reduce the current health by the damage amount.
-        iHealth -= amount;
-        healthSlider.value = iHealth;
+        ChangeHp(-amount);
+
+
         playerAudio.Play();
 
         // If the player has lost all it's health and the death flag hasn't been set yet...
@@ -135,4 +135,6 @@ public class PlayerHealth : MonoBehaviour, IHealth
         playerMovement.enabled = false;
         playerShooting.enabled = false;
     }
+
+
 }

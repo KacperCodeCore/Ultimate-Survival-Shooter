@@ -12,8 +12,6 @@ public class HealAction : Action
 
     private void Heal(StateController controller)
     {
-        float health = controller.iTankHealth.CurrentHealth + 5 * Time.deltaTime;
-        controller.iTankHealth.HealAmount = health;
-        controller.tankHealth.SetHealthUI();
+        controller.iTankHealth.HealAmount(5 * Time.deltaTime);
     }
 }

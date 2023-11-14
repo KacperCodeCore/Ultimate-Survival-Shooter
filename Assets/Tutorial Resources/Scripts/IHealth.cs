@@ -4,9 +4,11 @@ using UnityEngine;
 
 public interface IHealth
 {
+    public float MaxHealth { get; }
     public float CurrentHealth { get; }
 
-    public float HealAmount { set; }
-    public void TakeDamage(int amount, Vector3 hitPoint);
+    public void TakeDamage(float amount, Vector3 hitPoint);
+
+    public void HealAmount(float amount);
 
 }

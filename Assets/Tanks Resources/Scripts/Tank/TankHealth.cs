@@ -15,7 +15,7 @@ public class TankHealth : MonoBehaviour, IHealth
     private ParticleSystem m_ExplosionParticles;        // The particle system the will play when the tank is destroyed.
     private float m_CurrentHealth;                      // How much health the tank currently has.
     private bool m_Dead;                                // Has the tank been reduced beyond zero health yet?
-    private bool hitDetected = false;
+    //private bool hitDetected = false;
 
     float IHealth.CurrentHealth
     {
@@ -24,31 +24,39 @@ public class TankHealth : MonoBehaviour, IHealth
             return m_CurrentHealth;
         }
     }
-    float IHealth.HealAmount
-    {
-        set
-        {
-            m_CurrentHealth = value;
-        }
-    }
-    public bool HasHitDetecred
+
+    float IHealth.MaxHealth
     {
         get
         {
-            return hitDetected;
-        }
-        set
-        {
-            hitDetected = true;
+            return m_StartingHealth;
         }
     }
-    //void IHealth.ResetHitDetected()
+
+    public float MaxHealth => throw new System.NotImplementedException();
+
+    //public bool HasHitDetecred
     //{
+    //    get
+    //    {
+    //        return hitDetected;
+    //    }
     //    set
     //    {
-    //        hitDetected = false;
+    //        hitDetected = true;
     //    }
     //}
+
+    void ChangeHp(float amount)
+    {
+        m_CurrentHealth += amount;
+        // Change the UI elements appropriately.
+        SetHealthUI();
+    }
+    public void HealAmount(float amount)
+    {
+        ChangeHp(amount);
+    }
 
     //bool IHealth.HasHitDetecred { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
@@ -75,15 +83,11 @@ public class TankHealth : MonoBehaviour, IHealth
         SetHealthUI();
     }
 
-    void IHealth.TakeDamage(int amount, Vector3 hitPoint)
+    void IHealth.TakeDamage(float amount, Vector3 hitPoint)
     {
-        // Reduce current health by the amount of damage done.
-        m_CurrentHealth -= amount;
+        ChangeHp(-amount);
 
-        // Change the UI elements appropriately.
-        SetHealthUI();
-
-        hitDetected = true;
+        //hitDetected = true;
 
         // If the current health is at or below zero and it has not yet been registered, call OnDeath.
         if (m_CurrentHealth <= 0f && !m_Dead)
@@ -120,4 +124,6 @@ public class TankHealth : MonoBehaviour, IHealth
         // Turn the tank off.
         gameObject.SetActive (false);
     }
+
+
 }

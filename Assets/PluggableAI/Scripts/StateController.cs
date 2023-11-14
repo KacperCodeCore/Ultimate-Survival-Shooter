@@ -17,7 +17,8 @@ public class StateController : MonoBehaviour
 	[HideInInspector] public TankShooting tankShooting;
     [HideInInspector] public Transform[] wayPointList;
     [HideInInspector] public IHealth iTankHealth;
-    [HideInInspector] public TankHealth tankHealth;  // to do???
+    //[HideInInspector] public TankHealth tankHealth;  // to do???
+    [HideInInspector] public float previousHp;
 
     [HideInInspector] public int nextWayPoint;
     [HideInInspector] public Transform chaseTarget;
@@ -34,7 +35,8 @@ public class StateController : MonoBehaviour
 		tankShooting = GetComponent<TankShooting> ();
 		navMeshAgent = GetComponent<NavMeshAgent> ();
         iTankHealth = GetComponent<TankHealth> ();
-        tankHealth = GetComponent<TankHealth> ();
+        previousHp = iTankHealth.CurrentHealth;
+        //tankHealth = GetComponent<TankHealth> ();
         SetupAI(true, _patrolPointContainer.GetComponentsInChildren<Transform>());
 	}
 
@@ -59,10 +61,10 @@ public class StateController : MonoBehaviour
             return;
         stateTimeElapsed += Time.deltaTime;
         currentState.UpdateState(this);
-        if (iTankHealth != null)
-        {
-            isHitDetected = tankHealth.HasHitDetecred; // to jest źle;
-        }
+        ////if (iTankHealth != null)
+        ////{
+        ////    isHitDetected = tankHealth.HasHitDetecred; // to jest źle;
+        ////}
     }
 
     void OnDrawGizmos()

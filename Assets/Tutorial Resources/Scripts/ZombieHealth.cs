@@ -30,13 +30,14 @@ public class ZombieHealth : MonoBehaviour, IHealth
             return currentHealth;
         }
     }
-    float IHealth.HealAmount
+    float IHealth.MaxHealth
     {
-        set
+        get
         {
-            currentHealth = value;
+            return startingHealth;
         }
     }
+
 
     void Awake()
     {
@@ -70,8 +71,13 @@ public class ZombieHealth : MonoBehaviour, IHealth
         // Interpolate the color of the bar between the choosen colours based on the current percentage of the starting health.
         m_FillImage.color = Color.Lerp(m_ZeroHealthColor, m_FullHealthColor, currentHealth / startingHealth);
     }
+    void ChangeHp(float amount)
+    {
+        currentHealth += amount;
 
-    public void TakeDamage(int amount, Vector3 hitPoint)
+        SetHealthUI();
+    }
+    public void TakeDamage(float amount, Vector3 hitPoint)
     {
         // If the enemy is dead...
         if (isDead)
@@ -80,9 +86,8 @@ public class ZombieHealth : MonoBehaviour, IHealth
 
         enemyAudio.Play();
         // Reduce the current health by the amount of damage sustained.
-        currentHealth -= amount;
 
-        SetHealthUI();
+        ChangeHp(-amount);
 
         // Set the position of the particle system to where the hit was sustained.
         hitParticles.transform.position = hitPoint;
@@ -96,6 +101,14 @@ public class ZombieHealth : MonoBehaviour, IHealth
             // ... the enemy is dead.
             Death();
         }
+    }
+
+    void IHealth.HealAmount(float amount)
+    {
+
+        ChangeHp(amount);
+
+        //heatparticle???
     }
 
 

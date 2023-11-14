@@ -15,7 +15,7 @@ public class HPGreaterThan25Decision : Decision
     {
         if (controller.iTankHealth != null)
         {
-            return controller.iTankHealth.CurrentHealth > controller.iTankHealth.CurrentHealth * 0.45f;
+            return controller.iTankHealth.CurrentHealth > controller.iTankHealth.MaxHealth * 0.45f;
         }
 
         return false;

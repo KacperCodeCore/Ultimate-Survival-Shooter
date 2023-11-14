@@ -15,7 +15,7 @@ public class RunAction : Action
         if (controller.chaseTarget == null)
         {
             // Jeśli nie ma celu do ucieczki
-            return;
+            controller.chaseTarget = GameObject.FindGameObjectWithTag("Player").transform;
         }
 
         // Oblicza kierunek ucieczki - kierunek od gracza do AI
