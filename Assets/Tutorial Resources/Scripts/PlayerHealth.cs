@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour, IHealth
 {
     public int startingHealth = 100;                            // The amount of health the player starts the game with.
-    public float iHealth;                                   // The current health the player has.
+    public float currentHealth;                                   // The current health the player has.
     public AudioClip deathClip;                                 // The audio clip to play when the player dies.
     public float flashSpeed = 5f;                               // The speed the damageImage will fade at.
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     // The colour the damageImage is set to, to flash.
@@ -21,32 +21,6 @@ public class PlayerHealth : MonoBehaviour, IHealth
     bool damaged;                                               // True when the player gets damaged.
     AudioSource playerAudio;
 
-    float IHealth.CurrentHealth 
-    {
-        get
-        {
-            return iHealth;
-        }
-    }
-
-    float IHealth.MaxHealth
-    {
-        get
-        {
-            return startingHealth;
-        }
-    }
-
-    void ChangeHp(float amount)
-    {
-        iHealth += amount;
-        healthSlider.value = iHealth;
-    }
-
-    public void HealAmount(float amount)
-    {
-        ChangeHp(amount);
-    }
 
     void Awake()
     {
@@ -56,7 +30,7 @@ public class PlayerHealth : MonoBehaviour, IHealth
         playerShooting = GetComponentInChildren<PlayerShooting>();
         playerAudio = GetComponent<AudioSource>();
         // Set the initial health of the player.
-        iHealth = startingHealth;
+        currentHealth = startingHealth;
         healthSlider.value = 100;
     }
 
@@ -79,40 +53,23 @@ public class PlayerHealth : MonoBehaviour, IHealth
     }
 
 
-    void IHealth.TakeDamage(float amount, Vector3 hitPoint)
-    {
-        // Set the damaged flag so the screen will flash.
-        damaged = true;
 
-        // Reduce the current health by the damage amount.
-        ChangeHp(-amount);
-
-
-        playerAudio.Play();
-
-        // If the player has lost all it's health and the death flag hasn't been set yet...
-        if (iHealth <= 0 && !isDead)
-        {
-            // ... it should die.
-            Death();
-        }
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("AidKit"))
         {
-            if (iHealth + 25 < 100)
+            if (currentHealth + 25 < 100)
             {
-                iHealth += 25;
+                currentHealth += 25;
                 other.gameObject.SetActive(false);
-                healthSlider.value = iHealth;
+                healthSlider.value = currentHealth;
             }
 
-            else if (iHealth + 25 >= 100)
+            else if (currentHealth + 25 >= 100)
             {
-                iHealth = 100;
+                currentHealth = 100;
                 other.gameObject.SetActive(false);
-                healthSlider.value = iHealth;
+                healthSlider.value = currentHealth;
             }
         }
     }
@@ -136,5 +93,49 @@ public class PlayerHealth : MonoBehaviour, IHealth
         playerShooting.enabled = false;
     }
 
+    void ChangeHp(float amount)
+    {
+        currentHealth = currentHealth + amount > startingHealth ? startingHealth : currentHealth + amount;
+        healthSlider.value = currentHealth;
+    }
+    float IHealth.CurrentHealth
+    {
+        get
+        {
+            return currentHealth;
+        }
+    }
 
+    float IHealth.MaxHealth
+    {
+        get
+        {
+            return startingHealth;
+        }
+    }
+
+
+    void IHealth.HealAmount(float amount)
+    {
+        ChangeHp(amount);
+    }
+
+    void IHealth.TakeDamage(float amount, Vector3 hitPoint)
+    {
+        // Set the damaged flag so the screen will flash.
+        damaged = true;
+
+        // Reduce the current health by the damage amount.
+        ChangeHp(-amount);
+
+
+        playerAudio.Play();
+
+        // If the player has lost all it's health and the death flag hasn't been set yet...
+        if (currentHealth <= 0 && !isDead)
+        {
+            // ... it should die.
+            Death();
+        }
+    }
 }

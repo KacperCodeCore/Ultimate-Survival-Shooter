@@ -1538,7 +1538,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 173472, guid: 62a9caab8fe775244850b04986f85340, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 446194, guid: 62a9caab8fe775244850b04986f85340, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1582,11 +1582,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22470720, guid: 62a9caab8fe775244850b04986f85340, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22470720, guid: 62a9caab8fe775244850b04986f85340, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2106398000529361104, guid: 62a9caab8fe775244850b04986f85340,
         type: 3}
@@ -2016,6 +2016,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 000AITankScanner
       objectReference: {fileID: 0}
+    - target: {fileID: 173472, guid: d6ddf3b92ea49704ead4f36055a10a2a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 446194, guid: d6ddf3b92ea49704ead4f36055a10a2a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.5695105
@@ -2058,11 +2062,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22470720, guid: d6ddf3b92ea49704ead4f36055a10a2a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22470720, guid: d6ddf3b92ea49704ead4f36055a10a2a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2106398000529361104, guid: d6ddf3b92ea49704ead4f36055a10a2a,
         type: 3}

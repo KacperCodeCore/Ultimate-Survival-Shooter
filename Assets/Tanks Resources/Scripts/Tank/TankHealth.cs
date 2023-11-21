@@ -15,50 +15,15 @@ public class TankHealth : MonoBehaviour, IHealth
     private ParticleSystem m_ExplosionParticles;        // The particle system the will play when the tank is destroyed.
     private float m_CurrentHealth;                      // How much health the tank currently has.
     private bool m_Dead;                                // Has the tank been reduced beyond zero health yet?
-    //private bool hitDetected = false;
 
-    float IHealth.CurrentHealth
-    {
-        get
-        {
-            return m_CurrentHealth;
-        }
-    }
-
-    float IHealth.MaxHealth
-    {
-        get
-        {
-            return m_StartingHealth;
-        }
-    }
 
     public float MaxHealth => throw new System.NotImplementedException();
 
-    //public bool HasHitDetecred
-    //{
-    //    get
-    //    {
-    //        return hitDetected;
-    //    }
-    //    set
-    //    {
-    //        hitDetected = true;
-    //    }
-    //}
-
     void ChangeHp(float amount)
     {
-        m_CurrentHealth += amount;
-        // Change the UI elements appropriately.
+        m_CurrentHealth = m_CurrentHealth + amount > m_StartingHealth ? m_StartingHealth : m_CurrentHealth += amount;
         SetHealthUI();
     }
-    public void HealAmount(float amount)
-    {
-        ChangeHp(amount);
-    }
-
-    //bool IHealth.HasHitDetecred { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
     private void Awake ()
     {
@@ -83,18 +48,6 @@ public class TankHealth : MonoBehaviour, IHealth
         SetHealthUI();
     }
 
-    void IHealth.TakeDamage(float amount, Vector3 hitPoint)
-    {
-        ChangeHp(-amount);
-
-        //hitDetected = true;
-
-        // If the current health is at or below zero and it has not yet been registered, call OnDeath.
-        if (m_CurrentHealth <= 0f && !m_Dead)
-        {
-            OnDeath ();
-        }
-    }
 
     public void SetHealthUI ()
     {
@@ -125,5 +78,37 @@ public class TankHealth : MonoBehaviour, IHealth
         gameObject.SetActive (false);
     }
 
+    float IHealth.CurrentHealth
+    {
+        get
+        {
+            return m_CurrentHealth;
+        }
+    }
 
+    float IHealth.MaxHealth
+    {
+        get
+        {
+            return m_StartingHealth;
+        }
+    }
+
+    void IHealth.TakeDamage(float amount, Vector3 hitPoint)
+    {
+        ChangeHp(-amount);
+
+        //hitDetected = true;
+
+        // If the current health is at or below zero and it has not yet been registered, call OnDeath.
+        if (m_CurrentHealth <= 0f && !m_Dead)
+        {
+            OnDeath();
+        }
+    }
+
+    void IHealth.HealAmount(float amount)
+    {
+        ChangeHp(amount);
+    }
 }

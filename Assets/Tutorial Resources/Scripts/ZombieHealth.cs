@@ -23,20 +23,6 @@ public class ZombieHealth : MonoBehaviour, IHealth
     bool isSinking;                             // Whether the enemy has started sinking through the floor.
     AudioSource enemyAudio;
 
-    float IHealth.CurrentHealth
-    {
-        get
-        {
-            return currentHealth;
-        }
-    }
-    float IHealth.MaxHealth
-    {
-        get
-        {
-            return startingHealth;
-        }
-    }
 
 
     void Awake()
@@ -71,46 +57,6 @@ public class ZombieHealth : MonoBehaviour, IHealth
         // Interpolate the color of the bar between the choosen colours based on the current percentage of the starting health.
         m_FillImage.color = Color.Lerp(m_ZeroHealthColor, m_FullHealthColor, currentHealth / startingHealth);
     }
-    void ChangeHp(float amount)
-    {
-        currentHealth += amount;
-
-        SetHealthUI();
-    }
-    public void TakeDamage(float amount, Vector3 hitPoint)
-    {
-        // If the enemy is dead...
-        if (isDead)
-            // ... no need to take damage so exit the function.
-            return;
-
-        enemyAudio.Play();
-        // Reduce the current health by the amount of damage sustained.
-
-        ChangeHp(-amount);
-
-        // Set the position of the particle system to where the hit was sustained.
-        hitParticles.transform.position = hitPoint;
-
-        // And play the particles.
-        hitParticles.Play();
-
-        // If the current health is less than or equal to zero...
-        if (currentHealth <= 0)
-        {
-            // ... the enemy is dead.
-            Death();
-        }
-    }
-
-    void IHealth.HealAmount(float amount)
-    {
-
-        ChangeHp(amount);
-
-        //heatparticle???
-    }
-
 
     void Death()
     {
@@ -145,4 +91,58 @@ public class ZombieHealth : MonoBehaviour, IHealth
         // After 2 seconds destory the enemy.
         Destroy(gameObject, 2f);
     }
+
+    void ChangeHp(float amount)
+    {
+        currentHealth = currentHealth + amount > startingHealth ? startingHealth : currentHealth + amount;
+        SetHealthUI();
+    }
+
+    float IHealth.CurrentHealth
+    {
+        get
+        {
+            return currentHealth;
+        }
+    }
+    float IHealth.MaxHealth
+    {
+        get
+        {
+            return startingHealth;
+        }
+    }
+
+
+    void IHealth.HealAmount(float amount)
+    {
+        ChangeHp(amount);
+    }
+
+    void IHealth.TakeDamage(float amount, Vector3 hitPoint)
+    {
+        // If the enemy is dead...
+        if (isDead)
+            // ... no need to take damage so exit the function.
+            return;
+
+        enemyAudio.Play();
+        // Reduce the current health by the amount of damage sustained.
+
+        ChangeHp(-amount);
+
+        // Set the position of the particle system to where the hit was sustained.
+        hitParticles.transform.position = hitPoint;
+
+        // And play the particles.
+        hitParticles.Play();
+
+        // If the current health is less than or equal to zero...
+        if (currentHealth <= 0)
+        {
+            // ... the enemy is dead.
+            Death();
+        }
+    }
+
 }
