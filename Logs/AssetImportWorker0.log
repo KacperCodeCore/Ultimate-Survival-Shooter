@@ -1942,3 +1942,499 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1045.735733 seconds.
+  path: Assets/Tanks Resources/Fonts
+  artifactKey: Guid(32145277a30f2c840a782ff0c6321632) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tanks Resources/Fonts using Guid(32145277a30f2c840a782ff0c6321632) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '415e078773224aa73cde14cdf7e04e51') in 0.006657 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.686600 seconds.
+  path: Assets/Tanks Resources/Prefabs
+  artifactKey: Guid(6945bc9f316ec404382059baa89e5a12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tanks Resources/Prefabs using Guid(6945bc9f316ec404382059baa89e5a12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2714df50694e4817dc3cb6a5999f68de') in 0.012209 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.734392 seconds.
+  path: Assets/Tanks Resources/Prefabs/Tank.prefab
+  artifactKey: Guid(9e27852018e9e8944b4856aae21098f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tanks Resources/Prefabs/Tank.prefab using Guid(9e27852018e9e8944b4856aae21098f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c39b1d32acea45c0334278f1d1538c5') in 0.159521 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 68
+========================================================================
+Received Import Request.
+  Time since last request: 3.857632 seconds.
+  path: Assets/PluggableAI/Prefabs/000AITankScanner.prefab
+  artifactKey: Guid(d6ddf3b92ea49704ead4f36055a10a2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PluggableAI/Prefabs/000AITankScanner.prefab using Guid(d6ddf3b92ea49704ead4f36055a10a2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09fce9e8c27b0d2d77c0ae5b25360575') in 0.081155 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 133
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/PluggableAI/Prefabs/AITankChaser.prefab
+  artifactKey: Guid(7ff6571596052b34c9b5fc1ce3fd7244) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PluggableAI/Prefabs/AITankChaser.prefab using Guid(7ff6571596052b34c9b5fc1ce3fd7244) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fec94eacd6f4a996ec1dd4a34ebb9edf') in 0.051193 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 132
+========================================================================
+Received Import Request.
+  Time since last request: 102.071537 seconds.
+  path: Assets/PluggableAI/Prefabs/000AITankScanner.prefab
+  artifactKey: Guid(d6ddf3b92ea49704ead4f36055a10a2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PluggableAI/Prefabs/000AITankScanner.prefab using Guid(d6ddf3b92ea49704ead4f36055a10a2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d434115e7a470ff14beb5deb5b3ab00') in 0.063508 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 133
+========================================================================
+Received Import Request.
+  Time since last request: 49.474813 seconds.
+  path: Assets/PluggableAI/Prefabs/000AITankScanner.prefab
+  artifactKey: Guid(d6ddf3b92ea49704ead4f36055a10a2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PluggableAI/Prefabs/000AITankScanner.prefab using Guid(d6ddf3b92ea49704ead4f36055a10a2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b5f680e4a535304980468eea63f6dca') in 0.055161 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 133
+========================================================================
+Received Import Request.
+  Time since last request: 34.520567 seconds.
+  path: Assets/First_aid_kit/materials/New Material.mat
+  artifactKey: Guid(73bee8b752f0ff040a415083cc655de2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/First_aid_kit/materials/New Material.mat using Guid(73bee8b752f0ff040a415083cc655de2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07ef19c8cdc057b267be44443b48fd7f') in 0.035525 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 3.892234 seconds.
+  path: Assets/First_aid_kit/materials/New Material 1.mat
+  artifactKey: Guid(d50dc35f564d456438f9d1c4b888356e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/First_aid_kit/materials/New Material 1.mat using Guid(d50dc35f564d456438f9d1c4b888356e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82d4155ab6463e10296fc2b77b463ff8') in 0.016326 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.400429 seconds.
+  path: Assets/First_aid_kit/materials/New Material 2.mat
+  artifactKey: Guid(772c1993044f6464f8970b2613d6ffcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/First_aid_kit/materials/New Material 2.mat using Guid(772c1993044f6464f8970b2613d6ffcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43eb008a257353da5268cf2f12f88d35') in 0.015951 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.492361 seconds.
+  path: Assets/First_aid_kit/materials/New Material 3.mat
+  artifactKey: Guid(3a75b124e2977744593cdf9241d1e186) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/First_aid_kit/materials/New Material 3.mat using Guid(3a75b124e2977744593cdf9241d1e186) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b43a7002cf188130413a0eb5fa2dd7d0') in 0.015986 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 6.433878 seconds.
+  path: Assets/First_aid_kit/materials/tank1.mat
+  artifactKey: Guid(d50dc35f564d456438f9d1c4b888356e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/First_aid_kit/materials/tank1.mat using Guid(d50dc35f564d456438f9d1c4b888356e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05300a0d9566f9b4e4740aa91df1cf6f') in 0.015196 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 3.306494 seconds.
+  path: Assets/First_aid_kit/materials/tank2.mat
+  artifactKey: Guid(3a75b124e2977744593cdf9241d1e186) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/First_aid_kit/materials/tank2.mat using Guid(3a75b124e2977744593cdf9241d1e186) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20b12d9b6d94ef4dbc3a237a116fb8ae') in 0.015814 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 3.595727 seconds.
+  path: Assets/First_aid_kit/materials/tank3.mat
+  artifactKey: Guid(772c1993044f6464f8970b2613d6ffcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/First_aid_kit/materials/tank3.mat using Guid(772c1993044f6464f8970b2613d6ffcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c958df088f3bb92e1b9ec69053a3ce2c') in 0.027258 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 39.638969 seconds.
+  path: Assets/PluggableAI/Prefabs/000AITankScanner.prefab
+  artifactKey: Guid(d6ddf3b92ea49704ead4f36055a10a2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PluggableAI/Prefabs/000AITankScanner.prefab using Guid(d6ddf3b92ea49704ead4f36055a10a2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b47ef4ec0b20c7b00b429651d861c33') in 0.038823 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 133
+========================================================================
+Received Import Request.
+  Time since last request: 94.863553 seconds.
+  path: Assets/PluggableAI/Prefabs/000AITankScanner.prefab
+  artifactKey: Guid(d6ddf3b92ea49704ead4f36055a10a2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PluggableAI/Prefabs/000AITankScanner.prefab using Guid(d6ddf3b92ea49704ead4f36055a10a2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e8b3de705339baf8451b03b3789fb4d') in 0.070959 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 133
+========================================================================
+Received Import Request.
+  Time since last request: 37.667965 seconds.
+  path: Assets/Tanks Resources/Materials/TankColour.mat
+  artifactKey: Guid(12c120f2400576c4f97a98bcca5529bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tanks Resources/Materials/TankColour.mat using Guid(12c120f2400576c4f97a98bcca5529bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5092f097c15c28ea2ce64a94e03e98e') in 0.017959 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 7.723608 seconds.
+  path: Assets/PluggableAI/Prefabs/000AITankScanner.prefab
+  artifactKey: Guid(d6ddf3b92ea49704ead4f36055a10a2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PluggableAI/Prefabs/000AITankScanner.prefab using Guid(d6ddf3b92ea49704ead4f36055a10a2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8ebea1441413964f4f3e722776e707c') in 0.038480 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 134
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/PluggableAI/Prefabs/AITankChaser.prefab
+  artifactKey: Guid(7ff6571596052b34c9b5fc1ce3fd7244) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PluggableAI/Prefabs/AITankChaser.prefab using Guid(7ff6571596052b34c9b5fc1ce3fd7244) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4afd1aa1c42c4d0bc1aa13985aa87990') in 0.043150 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 133
+========================================================================
+Received Import Request.
+  Time since last request: 10.535675 seconds.
+  path: Assets/First_aid_kit/materials/tank2.mat
+  artifactKey: Guid(3a75b124e2977744593cdf9241d1e186) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/First_aid_kit/materials/tank2.mat using Guid(3a75b124e2977744593cdf9241d1e186) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8ef36884606ca50cbd91a3f79b469ee') in 0.014610 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000135 seconds.
+  path: Assets/Tutorial Resources/Materials/WallMaterial.mat
+  artifactKey: Guid(e196a25074146564d886222649fb88d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tutorial Resources/Materials/WallMaterial.mat using Guid(e196a25074146564d886222649fb88d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd4715120a1fd7b73ab5923d1f2bcd60') in 0.155897 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.980458 seconds.
+  path: Assets/PluggableAI/Prefabs/111_AITank.prefab
+  artifactKey: Guid(62a9caab8fe775244850b04986f85340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PluggableAI/Prefabs/111_AITank.prefab using Guid(62a9caab8fe775244850b04986f85340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a81e7fc1aee6e945564e03209f4f4028') in 0.035994 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 141
+========================================================================
+Received Import Request.
+  Time since last request: 4.853002 seconds.
+  path: Assets/PluggableAI/Prefabs/111_AITank.prefab
+  artifactKey: Guid(62a9caab8fe775244850b04986f85340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PluggableAI/Prefabs/111_AITank.prefab using Guid(62a9caab8fe775244850b04986f85340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec4875345341be1917f38cf01dcf8a45') in 0.031571 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 141
+========================================================================
+Received Import Request.
+  Time since last request: 16.969084 seconds.
+  path: Assets/Tanks Resources/Materials/TankColour 1.mat
+  artifactKey: Guid(07cdc0c1e37b02f4ab1239d0836aa8f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tanks Resources/Materials/TankColour 1.mat using Guid(07cdc0c1e37b02f4ab1239d0836aa8f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9fda105bef22acb8c10d5931abdd0c0') in 0.024816 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 3.739903 seconds.
+  path: Assets/First_aid_kit/materials/tank1.mat
+  artifactKey: Guid(d50dc35f564d456438f9d1c4b888356e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/First_aid_kit/materials/tank1.mat using Guid(d50dc35f564d456438f9d1c4b888356e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75d2cac8efa8530c18430b71d7f311ac') in 0.023319 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.104856 seconds.
+  path: Assets/PluggableAI/Prefabs/AITankChaser.prefab
+  artifactKey: Guid(7ff6571596052b34c9b5fc1ce3fd7244) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PluggableAI/Prefabs/AITankChaser.prefab using Guid(7ff6571596052b34c9b5fc1ce3fd7244) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b2fe8cd948825d99ab732c910791294') in 0.044674 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 132
+========================================================================
+Received Import Request.
+  Time since last request: 31.572501 seconds.
+  path: Assets/PluggableAI/Prefabs/AITankChaser.prefab
+  artifactKey: Guid(7ff6571596052b34c9b5fc1ce3fd7244) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PluggableAI/Prefabs/AITankChaser.prefab using Guid(7ff6571596052b34c9b5fc1ce3fd7244) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a552029c3eb765adef6649f4dde73c62') in 0.033693 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 132
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.596 seconds
+Refreshing native plugins compatible for Editor in 2.77 ms, found 0 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.158 seconds
+Domain Reload Profiling: 1752ms
+	BeginReloadAssembly (172ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (30ms)
+	RebuildCommonClasses (40ms)
+	RebuildNativeTypeToScriptingClass (18ms)
+	initialDomainReloadingComplete (46ms)
+	LoadAllAssembliesAndSetupDomain (318ms)
+		LoadAssemblies (406ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1159ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (383ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (78ms)
+			ProcessInitializeOnLoadAttributes (234ms)
+			ProcessInitializeOnLoadMethodAttributes (52ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
+Refreshing native plugins compatible for Editor in 2.67 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1727 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 20 unused Assets / (28.3 KB). Loaded Objects now: 2329.
+Memory consumption went from 90.4 MB to 90.4 MB.
+Total: 5.180900 ms (FindLiveObjects: 0.189500 ms CreateObjectMapping: 0.137100 ms MarkObjects: 4.766300 ms  DeleteObjects: 0.086800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.515 seconds
+Refreshing native plugins compatible for Editor in 1.66 ms, found 0 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.064 seconds
+Domain Reload Profiling: 1576ms
+	BeginReloadAssembly (200ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (38ms)
+	RebuildCommonClasses (54ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (41ms)
+	LoadAllAssembliesAndSetupDomain (203ms)
+		LoadAssemblies (308ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (9ms)
+			TypeCache.Refresh (4ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1064ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (380ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (75ms)
+			ProcessInitializeOnLoadAttributes (234ms)
+			ProcessInitializeOnLoadMethodAttributes (50ms)
+			AfterProcessingInitializeOnLoad (10ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (10ms)
+Refreshing native plugins compatible for Editor in 2.59 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1728 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 18 unused Assets / (27.4 KB). Loaded Objects now: 2332.
+Memory consumption went from 90.7 MB to 90.7 MB.
+Total: 4.873700 ms (FindLiveObjects: 0.227300 ms CreateObjectMapping: 0.174400 ms MarkObjects: 4.403400 ms  DeleteObjects: 0.066900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+========================================================================
+Received Import Request.
+  Time since last request: 702.138631 seconds.
+  path: Assets/PluggableAI/Prefabs/000AITankScanner.prefab
+  artifactKey: Guid(d6ddf3b92ea49704ead4f36055a10a2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PluggableAI/Prefabs/000AITankScanner.prefab using Guid(d6ddf3b92ea49704ead4f36055a10a2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d13ab7ee7c8e6fe5c0b40baab211810') in 0.224757 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 134
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/PluggableAI/Prefabs/AITankChaser.prefab
+  artifactKey: Guid(7ff6571596052b34c9b5fc1ce3fd7244) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PluggableAI/Prefabs/AITankChaser.prefab using Guid(7ff6571596052b34c9b5fc1ce3fd7244) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff33983cfdd76c9a0ee6d2fe62427e88') in 0.030341 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 132
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.577 seconds
+Refreshing native plugins compatible for Editor in 1.59 ms, found 0 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.105 seconds
+Domain Reload Profiling: 1679ms
+	BeginReloadAssembly (185ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (35ms)
+	RebuildCommonClasses (46ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (46ms)
+	LoadAllAssembliesAndSetupDomain (284ms)
+		LoadAssemblies (375ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (20ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (8ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1105ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (295ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (59ms)
+			ProcessInitializeOnLoadAttributes (176ms)
+			ProcessInitializeOnLoadMethodAttributes (43ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (8ms)
+Refreshing native plugins compatible for Editor in 1.68 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1727 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 20 unused Assets / (28.4 KB). Loaded Objects now: 2335.
+Memory consumption went from 90.5 MB to 90.4 MB.
+Total: 3.638100 ms (FindLiveObjects: 0.210200 ms CreateObjectMapping: 0.162200 ms MarkObjects: 3.161600 ms  DeleteObjects: 0.102900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+========================================================================
+Received Import Request.
+  Time since last request: 8.843530 seconds.
+  path: ProjectSettings/TagManager.asset
+  artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f004b9b34b6ee24d46a526417ffe9f9') in 0.013654 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.482 seconds
+Refreshing native plugins compatible for Editor in 1.79 ms, found 0 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.708 seconds
+Domain Reload Profiling: 1189ms
+	BeginReloadAssembly (186ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (35ms)
+	RebuildCommonClasses (46ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (31ms)
+	LoadAllAssembliesAndSetupDomain (204ms)
+		LoadAssemblies (301ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (10ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (709ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (363ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (59ms)
+			ProcessInitializeOnLoadAttributes (220ms)
+			ProcessInitializeOnLoadMethodAttributes (64ms)
+			AfterProcessingInitializeOnLoad (10ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Refreshing native plugins compatible for Editor in 1.88 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1727 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 18 unused Assets / (27.5 KB). Loaded Objects now: 2338.
+Memory consumption went from 90.4 MB to 90.4 MB.
+Total: 5.216300 ms (FindLiveObjects: 0.341700 ms CreateObjectMapping: 0.230200 ms MarkObjects: 4.586400 ms  DeleteObjects: 0.055000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 

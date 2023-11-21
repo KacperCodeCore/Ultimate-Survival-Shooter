@@ -32,7 +32,10 @@ public class StateController : MonoBehaviour
 
     void Awake () 
 	{
-		tankShooting = GetComponent<TankShooting> ();
+
+        _patrolPointContainer = GameObject.FindGameObjectWithTag("patroPointContainer").transform;
+
+        tankShooting = GetComponent<TankShooting> ();
 		navMeshAgent = GetComponent<NavMeshAgent> ();
         iTankHealth = GetComponent<TankHealth> ();
         previousHp = iTankHealth.CurrentHealth;
