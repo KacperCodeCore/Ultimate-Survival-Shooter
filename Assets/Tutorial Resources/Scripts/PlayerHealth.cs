@@ -21,6 +21,15 @@ public class PlayerHealth : MonoBehaviour, IHealth
     bool damaged;                                               // True when the player gets damaged.
     AudioSource playerAudio;
 
+    [SerializeField] private HeallableObjectType _objectType = HeallableObjectType.Player;
+
+
+    public Transform ObjectTransform => transform;
+
+    void IHealth.HealAmount(float amount)
+    {
+        ChangeHp(amount);
+    }
 
     void Awake()
     {
@@ -114,11 +123,11 @@ public class PlayerHealth : MonoBehaviour, IHealth
         }
     }
 
+    public HeallableObjectType ObjectType => HeallableObjectType.Player; 
 
-    void IHealth.HealAmount(float amount)
-    {
-        ChangeHp(amount);
-    }
+
+    Transform IHealth.ObjectTransform => transform;
+
 
     void IHealth.TakeDamage(float amount, Vector3 hitPoint)
     {

@@ -113,6 +113,10 @@ public class ZombieHealth : MonoBehaviour, IHealth
         }
     }
 
+    public HeallableObjectType ObjectType => HeallableObjectType.Zombie;
+
+
+    Transform IHealth.ObjectTransform => transform;
 
     void IHealth.HealAmount(float amount)
     {

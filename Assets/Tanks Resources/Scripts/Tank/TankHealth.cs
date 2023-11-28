@@ -17,6 +17,7 @@ public class TankHealth : MonoBehaviour, IHealth
     private bool m_Dead;                                // Has the tank been reduced beyond zero health yet?
 
 
+
     public float MaxHealth => throw new System.NotImplementedException();
 
     void ChangeHp(float amount)
@@ -93,6 +94,11 @@ public class TankHealth : MonoBehaviour, IHealth
             return m_StartingHealth;
         }
     }
+
+    public HeallableObjectType ObjectType => HeallableObjectType.Tank;
+
+
+    Transform IHealth.ObjectTransform => transform;
 
     void IHealth.TakeDamage(float amount, Vector3 hitPoint)
     {
