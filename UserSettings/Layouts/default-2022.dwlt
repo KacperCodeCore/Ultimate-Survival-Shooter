@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 772.8
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Game
   m_RootView: {fileID: 7}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -43,8 +43,8 @@ MonoBehaviour:
     y: 0
     width: 296
     height: 460
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 55
+  controlID: 59
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 114
+  controlID: 69
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -119,8 +119,8 @@ MonoBehaviour:
     y: 0
     width: 362.40002
     height: 722.8
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 54
+  controlID: 70
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -313,10 +313,10 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 14}
-      m_SelectedIDs: 9e4f0000
-      m_LastClickedID: 20382
-      m_ExpandedIDs: fef7ffff28fbffffac4f000004500000
+      scrollPos: {x: 0, y: 144}
+      m_SelectedIDs: e24f0000
+      m_LastClickedID: 20450
+      m_ExpandedIDs: 66f7ffff7af7ffff28fbffffb64f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -386,7 +386,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/First_aid_kit/materials
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -394,16 +394,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 68
   m_LastFolders:
-  - Assets
+  - Assets/First_aid_kit/materials
   m_LastFoldersGridSize: 68
   m_LastProjectPath: D:\GitHub\Unity3D\Ultimate Survival Shooter
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 70.20001}
-    m_SelectedIDs: 8c550000
-    m_LastClickedID: 21900
-    m_ExpandedIDs: 000000008c5500008e55000090550000925500009455000096550000985500001456000000ca9a3b
+    scrollPos: {x: 0, y: 60}
+    m_SelectedIDs: fc550000
+    m_LastClickedID: 22012
+    m_ExpandedIDs: 000000009a5500009c5500009e550000a0550000a2550000a4550000a655000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -431,7 +431,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000008c5500008e5500009055000092550000945500009655000098550000
+    m_ExpandedIDs: 000000009a5500009c5500009e550000a0550000a2550000a4550000a6550000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -529,7 +529,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 52
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -853,9 +853,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.53811294, y: -29.133492, z: 72.95724}
+    m_Target: {x: -18.02998, y: -59.991497, z: 64.89717}
     speed: 2
-    m_Value: {x: -0.53811294, y: -29.133492, z: 72.95724}
+    m_Value: {x: -18.02998, y: -59.991497, z: 64.89717}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -901,13 +901,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.23099756, y: 0.010780975, z: -0.002679189, w: 0.972927}
+    m_Target: {x: 0.36837918, y: -0.13680148, z: 0.054771494, w: 0.9179615}
     speed: 2
-    m_Value: {x: 0.23098947, y: 0.010780597, z: -0.0026790951, w: 0.9728929}
+    m_Value: {x: 0.3683661, y: -0.13679662, z: 0.05476955, w: 0.9179289}
   m_Size:
-    m_Target: 57.20092
+    m_Target: 49.99983
     speed: 2
-    m_Value: 57.20092
+    m_Value: 49.99983
   m_Ortho:
     m_Target: 0
     speed: 2
