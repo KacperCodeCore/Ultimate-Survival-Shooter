@@ -12,10 +12,12 @@ public class Heal : MonoBehaviour
     [SerializeField] private float _OneTimeHealAmount = 4.0f;
 
     [SerializeField] private bool _infinityHealAmount = false;
-    [NaughtyAttributes.ShowIf("_infinityHealAmount")][SerializeField] private float _maxHealAmount = 50;
+    //[NaughtyAttributes.ShowIf("_infinityHealAmount")]
+    [SerializeField] private float _maxHealAmount = 50;
 
     [SerializeField] private bool _infinityRepeat = false;
-    [NaughtyAttributes.ShowIf("_infinityRepeat")][SerializeField] private int _maxHealRepeat = 20;
+    //[NaughtyAttributes.ShowIf("_infinityRepeat")]
+    [SerializeField] private int _maxHealRepeat = 20;
 
 
 
