@@ -1,5 +1,6 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Unity.Services.Analytics;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -9,67 +10,105 @@ public class Heal : MonoBehaviour
     [SerializeField] private List<IHealth> _healedObjects = new List<IHealth>();
     [SerializeField] private float _healRate = 0.01f;
     [SerializeField] private float _OneTimeHealAmount = 4.0f;
-    [SerializeField] private int _MaxHealRepeat = 20;
+
+    [SerializeField] private bool _infinityHealAmount = false;
+    [NaughtyAttributes.ShowIf("_infinityHealAmount")][SerializeField] private float _maxHealAmount = 50;
+
+    [SerializeField] private bool _infinityRepeat = false;
+    [NaughtyAttributes.ShowIf("_infinityRepeat")][SerializeField] private int _maxHealRepeat = 20;
+
+
+
+    [SerializeField] private int _maxiItemsToHeal = 3;
 
     private SphereCollider _sphereCollider;
     private float _timer = 0f;
 
-    private float _initialScale;
+    private float _currentScale;
+    private float _procentScale;
+    private Time _initialTimer;
+    private int _itemCounter;
+    private bool _infinity;
+    private float _repeat;
+    private float _maxRepeat;
+
+
 
     private void Awake()
     {   
         _sphereCollider = GetComponent<SphereCollider>();
-        _initialScale = transform.localScale.x;
-    }
-    private void Update()
-    {
-        if (_healedObjects.Count > 0)
+        _currentScale = transform.localScale.x;
+
+        // ustawianie skali
+        float _procentScaleHeal;
+        float _procentScaleRepeat;
+        // sprawdzenie wariantu
+        if (!_infinityHealAmount && !_infinityRepeat)
         {
-            foreach (var item in _healedObjects)
+            _procentScaleHeal = (_OneTimeHealAmount / _maxHealAmount) * _currentScale;
+            _procentScaleRepeat = (1f / _maxHealRepeat) * _currentScale;
+            // większy _procentScale kończy sięszybciej, dlatego jest ustawiany jako główny
+            if (_procentScaleHeal >= _procentScaleRepeat)
             {
-                if (item.CurrentHealth < item.MaxHealth)
-                {
-                    _initialScale -= 1f * Time.deltaTime;
-                    item.HealAmount(_OneTimeHealAmount * Time.deltaTime);
-                }
-                else
-                {
-                    _initialScale -= 0.2f * Time.deltaTime;
-                }
-                UpdateScale();
+                _procentScale = _procentScaleHeal;
+                _maxRepeat = _maxHealAmount;
+                _repeat = _OneTimeHealAmount;
+                
             }
+            else
+            {
+                _procentScale = _procentScaleRepeat;
+                _maxRepeat = _maxHealRepeat;
+                _repeat = 1;
+            }
+            _infinity = false;
+        }
+        else if (!_infinityHealAmount && _infinityRepeat)
+        {
+            _procentScale = (_OneTimeHealAmount / _maxHealAmount) * _currentScale;
+            _maxRepeat = _maxHealAmount;
+            _repeat = _OneTimeHealAmount;
+            _infinity = false;
+        }
+        else if (_infinityHealAmount && !_infinityRepeat)
+        {
+            _procentScale = (1f / _maxHealRepeat) * _currentScale;
+            _maxRepeat = _maxHealRepeat;
+            _repeat = 1;
+            _infinity = false;
         }
         else
         {
-            _initialScale -= 0.2f * Time.deltaTime;
-            UpdateScale();
+            _procentScale = 0;
+            _infinity = true;
         }
-        if (_initialScale < 0f)
-        {
-            Destroy(gameObject);
-        }
-
-        //_timer -= Time.deltaTime;
-        //if (_timer < 0f && _healedObjects.Count > 0)
-        //{
-        //    _timer = _healRate;
-        //    _MaxHealRepeat--;
-        //    foreach (var item in _healedObjects)
-        //    {
-        //        item.HealAmount(_OneTimeHealAmount);
-        //        transform.localScale = new Vector3(_transform.localScale.x - 0.1f, _transform.localScale.y, _transform.localScale.z - 0.1f);
-        //    }
-        //    if(_MaxHealRepeat <= 0)
-        //    {
-        //        Destroy(gameObject);
-        //    }
-        //}
-
     }
-    private void UpdateScale()
+    private void Update()
     {
-        transform.localScale = new Vector3(_initialScale, transform.localScale.y, _initialScale);
-        _sphereCollider.radius = _initialScale * 0.05f;
+        _timer -= Time.deltaTime;
+        if (_timer < 0f && _healedObjects.Count > 0)
+        {
+            _timer = _healRate;
+            _itemCounter = 0;
+            foreach (var item in _healedObjects)
+            {
+                _itemCounter ++;
+
+                _maxRepeat -= _repeat;
+                _currentScale -= _procentScale;
+                item.HealAmount(_OneTimeHealAmount);
+                if (_infinity == false)
+                {
+                    transform.localScale = new Vector3(_currentScale, transform.localScale.y, _currentScale);
+                    _sphereCollider.radius = _currentScale * 0.05f;
+                }
+                if (_itemCounter >= _maxiItemsToHeal) { break; }
+            }
+            if (_maxRepeat <= 0 && _infinity == false)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)

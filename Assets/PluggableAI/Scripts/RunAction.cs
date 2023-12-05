@@ -28,5 +28,6 @@ public class RunAction : Action
         // Przenosi AI w kierunku punktu docelowego
         controller.navMeshAgent.SetDestination(runToPosition);
         controller.navMeshAgent.isStopped = false;
+        controller.navMeshAgent.updateRotation = true;
     }
 }

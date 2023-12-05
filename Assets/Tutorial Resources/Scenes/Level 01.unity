@@ -2516,7 +2516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 173472, guid: d6ddf3b92ea49704ead4f36055a10a2a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 446194, guid: d6ddf3b92ea49704ead4f36055a10a2a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2560,11 +2560,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22470720, guid: d6ddf3b92ea49704ead4f36055a10a2a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22470720, guid: d6ddf3b92ea49704ead4f36055a10a2a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2670,7 +2670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
-  currentHealth: 0
+  currentHealth: 70
   deathClip: {fileID: 8300000, guid: d36a393bca4582043982db9089e1694f, type: 3}
   flashSpeed: 5
   flashColour: {r: 1, g: 0, b: 0, a: 0.1}
@@ -3387,23 +3387,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 301197268757744614, guid: d5b5f48b39d0765418a51aae4fde18e6,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 301197268757744614, guid: d5b5f48b39d0765418a51aae4fde18e6,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 301197268757744614, guid: d5b5f48b39d0765418a51aae4fde18e6,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.46
       objectReference: {fileID: 0}
     - target: {fileID: 301197268757744614, guid: d5b5f48b39d0765418a51aae4fde18e6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.21
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 301197268757744614, guid: d5b5f48b39d0765418a51aae4fde18e6,
         type: 3}
@@ -3445,10 +3435,55 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1166841359633561205, guid: d5b5f48b39d0765418a51aae4fde18e6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6647598266524229477, guid: d5b5f48b39d0765418a51aae4fde18e6,
         type: 3}
       propertyPath: m_Name
       value: HealSfere
+      objectReference: {fileID: 0}
+    - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
+        type: 3}
+      propertyPath: _MaxHealRepeat
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
+        type: 3}
+      propertyPath: _InfinityRepeat
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
+        type: 3}
+      propertyPath: _maxiItemsToHeal
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
+        type: 3}
+      propertyPath: _OneTimeHealAmount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
+        type: 3}
+      propertyPath: _InfinityHealAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
+        type: 3}
+      propertyPath: _infinityHealAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
+        type: 3}
+      propertyPath: _healedTyper.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
+        type: 3}
+      propertyPath: _healedTyper.Array.data[1]
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3481,7 +3516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 413726, guid: 15f3ac8e52e2ead4d838e1c15c093c40, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -4.47
       objectReference: {fileID: 0}
     - target: {fileID: 413726, guid: 15f3ac8e52e2ead4d838e1c15c093c40, type: 3}
       propertyPath: m_LocalRotation.w

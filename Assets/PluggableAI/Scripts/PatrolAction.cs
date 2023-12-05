@@ -14,6 +14,8 @@ public class PatrolAction : Action
     {
         controller.navMeshAgent.destination = controller.wayPointList[controller.nextWayPoint].position;
         controller.navMeshAgent.isStopped = false;
+        controller.navMeshAgent.updateRotation = true;
+
 
         if (controller.navMeshAgent.remainingDistance <= controller.navMeshAgent.stoppingDistance && !controller.navMeshAgent.pathPending)
         {
