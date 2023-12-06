@@ -12,16 +12,16 @@ public class Heal : MonoBehaviour
     [SerializeField] private float _OneTimeHealAmount = 4.0f;
 
     [SerializeField] private bool _infinityHealAmount = false;
-    //[NaughtyAttributes.ShowIf("_infinityHealAmount")]
+    [NaughtyAttributes.HideIf("_infinityHealAmount")]
     [SerializeField] private float _maxHealAmount = 50;
 
     [SerializeField] private bool _infinityRepeat = false;
-    //[NaughtyAttributes.ShowIf("_infinityRepeat")]
+    [NaughtyAttributes.HideIf("_infinityRepeat")]
     [SerializeField] private int _maxHealRepeat = 20;
 
 
 
-    [SerializeField] private int _maxiItemsToHeal = 3;
+    [SerializeField] private int _maxItemsToHeal = 3;
 
     private SphereCollider _sphereCollider;
     private float _timer = 0f;
@@ -104,7 +104,7 @@ public class Heal : MonoBehaviour
                     transform.localScale = new Vector3(_currentScale, transform.localScale.y, _currentScale);
                     _sphereCollider.radius = _currentScale * 0.05f;
                 }
-                if (_itemCounter >= _maxiItemsToHeal) { break; }
+                if (_itemCounter >= _maxItemsToHeal) { break; }
             }
             if (_maxRepeat <= 0 && _infinity == false)
             {

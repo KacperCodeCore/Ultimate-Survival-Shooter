@@ -3457,6 +3457,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
         type: 3}
+      propertyPath: _infinityRepeat
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
+        type: 3}
       propertyPath: _maxiItemsToHeal
       value: 2
       objectReference: {fileID: 0}
