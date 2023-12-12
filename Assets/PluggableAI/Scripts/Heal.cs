@@ -8,8 +8,9 @@ public class Heal : MonoBehaviour
 {
     [SerializeField] private List<HeallableObjectType> _healedTyper = new List<HeallableObjectType>();
     [SerializeField] private List<IHealth> _healedObjects = new List<IHealth>();
+    private List<IHealth> _waitHealedObjects = new List<IHealth>();
     [SerializeField] private float _healRate = 0.01f;
-    [SerializeField] private float _OneTimeHealAmount = 4.0f;
+    [SerializeField] private float _oneTimeHealAmount = 4.0f;
 
     [SerializeField] private bool _infinityHealAmount = false;
     [NaughtyAttributes.HideIf("_infinityHealAmount")]
@@ -28,7 +29,6 @@ public class Heal : MonoBehaviour
 
     private float _currentScale;
     private float _procentScale;
-    private Time _initialTimer;
     private int _itemCounter;
     private bool _infinity;
     private float _repeat;
@@ -36,8 +36,8 @@ public class Heal : MonoBehaviour
 
 
 
-    private void Awake()
-    {   
+    private void Start()
+    {
         _sphereCollider = GetComponent<SphereCollider>();
         _currentScale = transform.localScale.x;
 
@@ -47,14 +47,14 @@ public class Heal : MonoBehaviour
         // sprawdzenie wariantu
         if (!_infinityHealAmount && !_infinityRepeat)
         {
-            _procentScaleHeal = (_OneTimeHealAmount / _maxHealAmount) * _currentScale;
+            _procentScaleHeal = (_oneTimeHealAmount / _maxHealAmount) * _currentScale;
             _procentScaleRepeat = (1f / _maxHealRepeat) * _currentScale;
             // większy _procentScale kończy sięszybciej, dlatego jest ustawiany jako główny
             if (_procentScaleHeal >= _procentScaleRepeat)
             {
                 _procentScale = _procentScaleHeal;
                 _maxRepeat = _maxHealAmount;
-                _repeat = _OneTimeHealAmount;
+                _repeat = _oneTimeHealAmount;
                 
             }
             else
@@ -67,9 +67,9 @@ public class Heal : MonoBehaviour
         }
         else if (!_infinityHealAmount && _infinityRepeat)
         {
-            _procentScale = (_OneTimeHealAmount / _maxHealAmount) * _currentScale;
+            _procentScale = (_oneTimeHealAmount / _maxHealAmount) * _currentScale;
             _maxRepeat = _maxHealAmount;
-            _repeat = _OneTimeHealAmount;
+            _repeat = _oneTimeHealAmount;
             _infinity = false;
         }
         else if (_infinityHealAmount && !_infinityRepeat)
@@ -93,18 +93,18 @@ public class Heal : MonoBehaviour
             _timer = _healRate;
             _itemCounter = 0;
             foreach (var item in _healedObjects)
-            {
-                _itemCounter ++;
-
-                _maxRepeat -= _repeat;
-                _currentScale -= _procentScale;
-                item.HealAmount(_OneTimeHealAmount);
-                if (_infinity == false)
+            {   
+                if(item.MaxHealth > item.CurrentHealth)
                 {
-                    transform.localScale = new Vector3(_currentScale, transform.localScale.y, _currentScale);
-                    _sphereCollider.radius = _currentScale * 0.05f;
+                    _maxRepeat -= _repeat;
+                    _currentScale -= _procentScale;
+                    item.HealAmount(_oneTimeHealAmount);
+                    if (_infinity == false)
+                    {
+                        transform.localScale = new Vector3(_currentScale, transform.localScale.y, _currentScale);
+                        _sphereCollider.radius = _currentScale * 0.05f;
+                    }
                 }
-                if (_itemCounter >= _maxItemsToHeal) { break; }
             }
             if (_maxRepeat <= 0 && _infinity == false)
             {
@@ -120,14 +120,46 @@ public class Heal : MonoBehaviour
         {
             _healedObjects.Add(healableObject);
         }
+
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.TryGetComponent<IHealth>(out IHealth healableObject) && _healedObjects.Contains(healableObject))
+        if (other.TryGetComponent<IHealth>(out IHealth _waitForHealingObjects) && _healedObjects.Contains(_waitForHealingObjects))
         {
-            _healedObjects.Remove(healableObject);
+            _healedObjects.Remove(_waitForHealingObjects);
         }
     }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.TryGetComponent<IHealth>(out IHealth healableObject) &&
+    //        _healedTyper.Contains(healableObject.ObjectType) && !_waitForHealingObjects.Contains(healableObject))
+    //    {
+    //        _waitForHealingObjects.Add(healableObject);
+    //        if (_healedObjects.Count < _maxItemsToHeal)
+    //        {
+    //            foreach (var item in _waitForHealingObjects)
+    //            {
+    //                if (_healedObjects.Contains(item))
+    //                {
+    //                    _healedObjects.Add(item);
+    //                }
+    //                break;
+    //            }
+    //        }
+    //    }
+    //}
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    var otherComponents = other.TryGetComponent<IHealth>(out IHealth healableObject);
+    //    if (otherComponents && _waitForHealingObjects.Contains(healableObject))
+    //    {
+    //        _waitForHealingObjects.Remove(healableObject);
+    //    }
+    //    if (otherComponents && _healedObjects.Contains(healableObject))
+    //    {
+    //        _healedObjects.Remove(healableObject);
+    //    }
+    //}
 
     private void OnDrawGizmosSelected()
     {
