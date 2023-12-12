@@ -1229,6 +1229,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1719976302}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &785635556 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6647598266524229477, guid: d5b5f48b39d0765418a51aae4fde18e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1952894863}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &785635558 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1952894863}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785635556}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a0267a9a5109824f98e3df36c260279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &785635562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785635556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab96c21627dabc4cbd7884c90c3d9c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeToActivate: 1
+  _growingTime: 1
+  _script: {fileID: 785635558}
+  _color: {fileID: 2100000, guid: 8ec7fd25e4fa1e24f9edb478d610e583, type: 2}
 --- !u!1 &795560689
 GameObject:
   m_ObjectHideFlags: 0
@@ -3445,15 +3479,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealSfere
       objectReference: {fileID: 0}
-    - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
+    - target: {fileID: 6647598266524229477, guid: d5b5f48b39d0765418a51aae4fde18e6,
         type: 3}
-      propertyPath: _MaxHealRepeat
-      value: 10
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6771046419671449997, guid: d5b5f48b39d0765418a51aae4fde18e6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
         type: 3}
-      propertyPath: _InfinityRepeat
+      propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
+        type: 3}
+      propertyPath: _maxHealAmount
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
         type: 3}
@@ -3462,38 +3506,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
         type: 3}
-      propertyPath: _maxiItemsToHeal
+      propertyPath: _maxItemsToHeal
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
         type: 3}
       propertyPath: _OneTimeHealAmount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
-        type: 3}
-      propertyPath: _InfinityHealAmount
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
         type: 3}
       propertyPath: _infinityHealAmount
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
-        type: 3}
-      propertyPath: _healedTyper.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
-        type: 3}
-      propertyPath: _healedTyper.Array.data[1]
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6647598266524229477, guid: d5b5f48b39d0765418a51aae4fde18e6,
+        type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 785635562}
   m_SourcePrefab: {fileID: 100100000, guid: d5b5f48b39d0765418a51aae4fde18e6, type: 3}
 --- !u!1001 &1956739333
 PrefabInstance:
@@ -3521,7 +3554,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 413726, guid: 15f3ac8e52e2ead4d838e1c15c093c40, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.47
+      value: -2.77
       objectReference: {fileID: 0}
     - target: {fileID: 413726, guid: 15f3ac8e52e2ead4d838e1c15c093c40, type: 3}
       propertyPath: m_LocalRotation.w

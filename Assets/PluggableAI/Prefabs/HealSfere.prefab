@@ -76,12 +76,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a0267a9a5109824f98e3df36c260279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healedTyper: 00000000
+  _healedTyper: 0000000002000000
   _healRate: 0.5
-  _OneTimeHealAmount: 5
-  _MaxHealRepeat: 50
-  _InfinityRepeat: 0
-  _maxiItemsToHeal: 3
+  _OneTimeHealAmount: 10
+  _infinityHealAmount: 1
+  _maxHealAmount: 50
+  _infinityRepeat: 1
+  _maxHealRepeat: 20
+  _maxItemsToHeal: 3
 --- !u!23 &6771046419671449997
 MeshRenderer:
   m_ObjectHideFlags: 0
