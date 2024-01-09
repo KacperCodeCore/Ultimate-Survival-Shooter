@@ -149,4 +149,8 @@ public class ZombieHealth : MonoBehaviour, IHealth
         }
     }
 
+    bool IHealth.NeedHeal()
+    {
+        return currentHealth < startingHealth;
+    }
 }

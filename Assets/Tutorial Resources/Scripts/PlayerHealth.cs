@@ -147,4 +147,9 @@ public class PlayerHealth : MonoBehaviour, IHealth
             Death();
         }
     }
+
+    bool IHealth.NeedHeal()
+    {
+        return currentHealth < startingHealth;
+    }
 }

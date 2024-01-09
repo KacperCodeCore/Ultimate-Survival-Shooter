@@ -1,12 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Flags]
 public enum HeallableObjectType
 {
-    Player,
-    Tank,
-    Zombie
+    Player = 1,
+    Tank = 2,
+    Zombie = 4
 }
 
 public interface IHealth
@@ -19,5 +21,7 @@ public interface IHealth
     public void TakeDamage(float amount, Vector3 hitPoint);
 
     public void HealAmount(float amount);
+
+    public bool NeedHeal();
 
 }

@@ -1235,19 +1235,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1952894863}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &785635558 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1952894863}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785635556}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a0267a9a5109824f98e3df36c260279, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &785635562
+--- !u!114 &785635557
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1256,13 +1244,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 785635556}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ab96c21627dabc4cbd7884c90c3d9c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a0267a9a5109824f98e3df36c260279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeToActivate: 1
-  _growingTime: 1
-  _script: {fileID: 785635558}
-  _color: {fileID: 2100000, guid: 8ec7fd25e4fa1e24f9edb478d610e583, type: 2}
+  _healedTyper: -1
+  _healInterval: 0.01
+  _oneTimeHealAmount: 4
+  _hasUserLimit: 1
+  _userLimit: 2
+  _hasUseLimit: 1
+  _useLimit: 20
+  _hasHealLimit: 1
+  _healLimit: 50
 --- !u!1 &795560689
 GameObject:
   m_ObjectHideFlags: 0
@@ -3469,55 +3462,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1166841359633561205, guid: d5b5f48b39d0765418a51aae4fde18e6,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6647598266524229477, guid: d5b5f48b39d0765418a51aae4fde18e6,
         type: 3}
       propertyPath: m_Name
       value: HealSfere
-      objectReference: {fileID: 0}
-    - target: {fileID: 6647598266524229477, guid: d5b5f48b39d0765418a51aae4fde18e6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6771046419671449997, guid: d5b5f48b39d0765418a51aae4fde18e6,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
-        type: 3}
-      propertyPath: _maxHealAmount
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
-        type: 3}
-      propertyPath: _infinityRepeat
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
-        type: 3}
-      propertyPath: _maxItemsToHeal
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
-        type: 3}
-      propertyPath: _OneTimeHealAmount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7173547416193277822, guid: d5b5f48b39d0765418a51aae4fde18e6,
-        type: 3}
-      propertyPath: _infinityHealAmount
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3525,8 +3473,8 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6647598266524229477, guid: d5b5f48b39d0765418a51aae4fde18e6,
         type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 785635562}
+      insertIndex: -1
+      addedObject: {fileID: 785635557}
   m_SourcePrefab: {fileID: 100100000, guid: d5b5f48b39d0765418a51aae4fde18e6, type: 3}
 --- !u!1001 &1956739333
 PrefabInstance:

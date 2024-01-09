@@ -2,173 +2,157 @@
 using Unity.Services.Analytics;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UIElements;
+using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 
 public class Heal : MonoBehaviour
 {
-    [SerializeField] private List<HeallableObjectType> _healedTyper = new List<HeallableObjectType>();
-    [SerializeField] private List<IHealth> _healedObjects = new List<IHealth>();
-    private List<IHealth> _waitHealedObjects = new List<IHealth>();
-    [SerializeField] private float _healRate = 0.01f;
+    [SerializeField] private HeallableObjectType _healedTyper;
+    [SerializeField] private float _healInterval = 1.0f;
     [SerializeField] private float _oneTimeHealAmount = 4.0f;
 
-    [SerializeField] private bool _infinityHealAmount = false;
-    [NaughtyAttributes.HideIf("_infinityHealAmount")]
-    [SerializeField] private float _maxHealAmount = 50;
 
-    [SerializeField] private bool _infinityRepeat = false;
-    [NaughtyAttributes.HideIf("_infinityRepeat")]
-    [SerializeField] private int _maxHealRepeat = 20;
+    [Header("User Limit")]
+    [SerializeField] private bool _hasUserLimit = true;
+    [NaughtyAttributes.ShowIf("_hasUserLimit")]
+    [SerializeField] private int _userLimit = 2;
+
+    [Header("Use Limit")]
+    [SerializeField] private bool _hasUseLimit = true;
+    [NaughtyAttributes.ShowIf("_hasUseLimit")]
+    [SerializeField] private int _useLimit = 20;
+
+    [Header("Heal limit")]
+    [SerializeField] private bool _hasHealLimit = true;
+    [NaughtyAttributes.ShowIf("_hasHealLimit")]
+    [SerializeField] private float _healLimit = 50;
 
 
+    [Header("Detected Objects")]
+    [SerializeField] private List<IHealth> _healedObjects = new List<IHealth>();
+    [SerializeField] private List<IHealth> _awaitingObjects = new List<IHealth>();
 
-    [SerializeField] private int _maxItemsToHeal = 3;
-
-    private SphereCollider _sphereCollider;
     private float _timer = 0f;
-
-    private float _currentScale;
-    private float _procentScale;
-    private int _itemCounter;
-    private bool _infinity;
-    private float _repeat;
-    private float _maxRepeat;
+    private UnityAction _onDeactivation;
 
 
-
-    private void Start()
-    {
-        _sphereCollider = GetComponent<SphereCollider>();
-        _currentScale = transform.localScale.x;
-
-        // ustawianie skali
-        float _procentScaleHeal;
-        float _procentScaleRepeat;
-        // sprawdzenie wariantu
-        if (!_infinityHealAmount && !_infinityRepeat)
-        {
-            _procentScaleHeal = (_oneTimeHealAmount / _maxHealAmount) * _currentScale;
-            _procentScaleRepeat = (1f / _maxHealRepeat) * _currentScale;
-            // większy _procentScale kończy sięszybciej, dlatego jest ustawiany jako główny
-            if (_procentScaleHeal >= _procentScaleRepeat)
-            {
-                _procentScale = _procentScaleHeal;
-                _maxRepeat = _maxHealAmount;
-                _repeat = _oneTimeHealAmount;
-                
-            }
-            else
-            {
-                _procentScale = _procentScaleRepeat;
-                _maxRepeat = _maxHealRepeat;
-                _repeat = 1;
-            }
-            _infinity = false;
-        }
-        else if (!_infinityHealAmount && _infinityRepeat)
-        {
-            _procentScale = (_oneTimeHealAmount / _maxHealAmount) * _currentScale;
-            _maxRepeat = _maxHealAmount;
-            _repeat = _oneTimeHealAmount;
-            _infinity = false;
-        }
-        else if (_infinityHealAmount && !_infinityRepeat)
-        {
-            _procentScale = (1f / _maxHealRepeat) * _currentScale;
-            _maxRepeat = _maxHealRepeat;
-            _repeat = 1;
-            _infinity = false;
-        }
-        else
-        {
-            _procentScale = 0;
-            _infinity = true;
-        }
-    }
+    
     private void Update()
     {
+
         _timer -= Time.deltaTime;
-        if (_timer < 0f && _healedObjects.Count > 0)
+        if (_timer >= 0f || _healedObjects.Count <= 0) return;
+
+        _timer = _healInterval;
+        if (_hasHealLimit && _healLimit <= 0) return;
+
+        if (_hasUserLimit && _userLimit <= 0) return;
+
+        var toRemove = new List<IHealth>();
+
+        foreach (var item in _healedObjects)
         {
-            _timer = _healRate;
-            _itemCounter = 0;
-            foreach (var item in _healedObjects)
-            {   
-                if(item.MaxHealth > item.CurrentHealth)
+            var amount = item.MaxHealth - item.CurrentHealth;
+
+            if (_hasHealLimit)
+            {
+                amount = Mathf.Min(amount, _healLimit);
+            }
+            else 
+            {
+                amount = Mathf.Min(amount, _oneTimeHealAmount);
+            }
+
+
+            item.HealAmount(amount);
+
+            // skąd wiadomo, że nie trzeba leczyć?
+            if (!item.NeedHeal())
+            {
+                toRemove.Add(item);
+                continue;
+            }
+
+            if (_hasHealLimit)
+            {
+                _healLimit -= amount;
+                if (_healLimit <= 0) 
                 {
-                    _maxRepeat -= _repeat;
-                    _currentScale -= _procentScale;
-                    item.HealAmount(_oneTimeHealAmount);
-                    if (_infinity == false)
-                    {
-                        transform.localScale = new Vector3(_currentScale, transform.localScale.y, _currentScale);
-                        _sphereCollider.radius = _currentScale * 0.05f;
-                    }
+                    gameObject.SetActive(false);
+                    break;
                 }
             }
-            if (_maxRepeat <= 0 && _infinity == false)
+
+            if(_hasUseLimit)
             {
-                Destroy(gameObject);
+                _useLimit--;
+                if (_useLimit <= 0)
+                {
+                    gameObject.SetActive(false);
+                    break;
+                }
             }
         }
+        foreach(var item in toRemove)
+        {
+            RemoveFromHealList(item);
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<IHealth>(out IHealth healableObject) &&
-            _healedTyper.Contains(healableObject.ObjectType) && !_healedObjects.Contains(healableObject))
+        var hasObject = other.TryGetComponent(out IHealth healableObject);
+        if(hasObject)
         {
-            _healedObjects.Add(healableObject);
+            var hasFlag = _healedTyper.HasFlag(healableObject.ObjectType);
+            var isHealed =  _healedObjects.Contains(healableObject);
+            var isWaiting =  _awaitingObjects.Contains(healableObject);
+            if (hasFlag && healableObject.NeedHeal() && !isHealed && !isWaiting)
+            {
+                if(!_hasUserLimit || (_hasUserLimit && _userLimit > _healedObjects.Count))
+                {
+                    _healedObjects.Add(healableObject);
+                }
+                else
+                {
+                    _awaitingObjects.Add(healableObject);
+                }
+            }
         }
-
     }
+
     private void OnTriggerExit(Collider other)
     {
-        if (other.TryGetComponent<IHealth>(out IHealth _waitForHealingObjects) && _healedObjects.Contains(_waitForHealingObjects))
+        if (other.TryGetComponent<IHealth>(out IHealth healedObjedt) && _healedObjects.Contains(healedObjedt))
         {
-            _healedObjects.Remove(_waitForHealingObjects);
+            RemoveFromHealList(healedObjedt);
         }
     }
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.TryGetComponent<IHealth>(out IHealth healableObject) &&
-    //        _healedTyper.Contains(healableObject.ObjectType) && !_waitForHealingObjects.Contains(healableObject))
-    //    {
-    //        _waitForHealingObjects.Add(healableObject);
-    //        if (_healedObjects.Count < _maxItemsToHeal)
-    //        {
-    //            foreach (var item in _waitForHealingObjects)
-    //            {
-    //                if (_healedObjects.Contains(item))
-    //                {
-    //                    _healedObjects.Add(item);
-    //                }
-    //                break;
-    //            }
-    //        }
-    //    }
-    //}
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    var otherComponents = other.TryGetComponent<IHealth>(out IHealth healableObject);
-    //    if (otherComponents && _waitForHealingObjects.Contains(healableObject))
-    //    {
-    //        _waitForHealingObjects.Remove(healableObject);
-    //    }
-    //    if (otherComponents && _healedObjects.Contains(healableObject))
-    //    {
-    //        _healedObjects.Remove(healableObject);
-    //    }
-    //}
 
-    private void OnDrawGizmosSelected()
+    private void RemoveFromHealList(IHealth item)
     {
-        foreach (var item in _healedObjects)
+        _healedObjects.Remove(item);
+        //todo po co to jest?? ↓
+        if(_hasUseLimit && _awaitingObjects.Count > 0)
         {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(item.ObjectTransform.position, 1.5f);
+            _healedObjects.Add(_awaitingObjects[0]);
+            _awaitingObjects.RemoveAt(0);
         }
     }
 
+
+    //todo coto robi? ↓
+    public void RegisterAction(UnityAction action)
+    {
+        _onDeactivation += action;
+    }
+
+    private void OnDestroy()
+    {
+        _onDeactivation?.Invoke();
+        gameObject.SetActive(false);
+    }
 
 }

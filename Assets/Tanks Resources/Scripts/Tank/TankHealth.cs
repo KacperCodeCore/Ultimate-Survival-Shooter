@@ -117,4 +117,9 @@ public class TankHealth : MonoBehaviour, IHealth
     {
         ChangeHp(amount);
     }
+
+    bool IHealth.NeedHeal()
+    {
+        return m_CurrentHealth < m_StartingHealth;
+    }
 }
