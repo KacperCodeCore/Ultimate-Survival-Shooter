@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour, IHealth
 {
-    public int startingHealth = 100;                            // The amount of health the player starts the game with.
+    public float startingHealth = 100;                            // The amount of health the player starts the game with.
     public float currentHealth;                                   // The current health the player has.
     public AudioClip deathClip;                                 // The audio clip to play when the player dies.
     public float flashSpeed = 5f;                               // The speed the damageImage will fade at.
@@ -39,8 +39,9 @@ public class PlayerHealth : MonoBehaviour, IHealth
         playerShooting = GetComponentInChildren<PlayerShooting>();
         playerAudio = GetComponent<AudioSource>();
         // Set the initial health of the player.
-        currentHealth = startingHealth;
-        healthSlider.value = 100;
+        currentHealth = 0.5f * startingHealth;
+    
+        healthSlider.value = currentHealth;
     }
 
 

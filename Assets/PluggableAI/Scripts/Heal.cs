@@ -57,7 +57,7 @@ public class Heal : MonoBehaviour
 
             if (_hasHealLimit)
             {
-                amount = Mathf.Min(amount, _healLimit);
+                amount = Mathf.Min(amount, _oneTimeHealAmount);
             }
             else 
             {
@@ -67,7 +67,6 @@ public class Heal : MonoBehaviour
 
             item.HealAmount(amount);
 
-            // skąd wiadomo, że nie trzeba leczyć?
             if (!item.NeedHeal())
             {
                 toRemove.Add(item);
@@ -134,7 +133,6 @@ public class Heal : MonoBehaviour
     private void RemoveFromHealList(IHealth item)
     {
         _healedObjects.Remove(item);
-        //todo po co to jest?? ↓
         if(_hasUseLimit && _awaitingObjects.Count > 0)
         {
             _healedObjects.Add(_awaitingObjects[0]);
