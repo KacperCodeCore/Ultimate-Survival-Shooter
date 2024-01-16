@@ -26,6 +26,15 @@ public class StateController : MonoBehaviour
     [HideInInspector] public float currentRotation = 0;
     [HideInInspector] public float lastRotation = 0;
 
+    [HideInInspector] public float totalRotateAngle;
+
+    [HideInInspector] public float totalRotY;
+    [HideInInspector] public bool sacnDir = true;
+
+    [HideInInspector] public float startRotY = 0.0f;
+    [HideInInspector] public Vector3 initLookAt = Vector3.zero;
+    [HideInInspector] public bool rotRestored = false;
+
     private bool aiActive;
     protected bool isHitDetected;
 
@@ -40,7 +49,12 @@ public class StateController : MonoBehaviour
         iTankHealth = GetComponent<TankHealth> ();
         previousHp = iTankHealth.CurrentHealth;
         //tankHealth = GetComponent<TankHealth> ();
-        SetupAI(true, _patrolPointContainer.GetComponentsInChildren<Transform>());
+
+        startRotY = transform.rotation.y;
+        initLookAt = transform.position + (transform.forward * 3.0f);
+
+        SetupAI(true, _patrolPointContainer != null ?
+            _patrolPointContainer.GetComponentsInChildren<Transform>() : null);
 	}
 
 
@@ -48,14 +62,12 @@ public class StateController : MonoBehaviour
     {
         wayPointList = wayPointsFromTankManager;
         aiActive = aiActivationFromTankManager;
-		if (aiActive) 
-		{
-			navMeshAgent.enabled = true;
-		} 
-        else 
-		{
-			navMeshAgent.enabled = false;
-		}
+
+        if(navMeshAgent != null)
+        {
+            navMeshAgent.enabled = aiActive;
+        }
+
 	}
 
     void Update()
@@ -95,8 +107,33 @@ public class StateController : MonoBehaviour
         return false;
     }
 
+    public bool Scan(float rotation, float maxAngle)
+    {
+        if (sacnDir)
+        {
+            totalRotY += rotation;
+            if(totalRotY >= maxAngle)
+            {
+                sacnDir = false; 
+            }
+            return true;
+        }
+        else
+        {
+            totalRotY -= rotation;
+            if (totalRotY <= maxAngle)
+            {
+                sacnDir = true;
+            }
+            return false;
+        }
+    }
+
     private void OnExitState()
     {
         stateTimeElapsed = 0;
+        totalRotateAngle = 0;
+        totalRotY = 0f;
+        rotRestored = false;
     }
 }
