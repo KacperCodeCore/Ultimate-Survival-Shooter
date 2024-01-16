@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "PluggableAI/Decisions/HitDecision")]
+[CreateAssetMenu(menuName = "PluggableAI/Decisions/InRange")]
 public class InRangeDecison : Decision
 {
     public override bool Decide(StateController controller)

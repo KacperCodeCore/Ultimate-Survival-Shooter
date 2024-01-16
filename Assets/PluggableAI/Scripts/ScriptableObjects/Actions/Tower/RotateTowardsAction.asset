@@ -9,10 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd1558871d9791c4ca5b0f2c2b899d95, type: 3}
-  m_Name: 333ScanAreaTower
+  m_Script: {fileID: 11500000, guid: 6f08f4b8972100a44b643ea9d9d9b328, type: 3}
+  m_Name: RotateTowardsAction
   m_EditorClassIdentifier: 
-  actions:
-  - {fileID: 0}
-  transitions: []
-  sceneGizmoColor: {r: 0.053618193, g: 1, b: 0, a: 1}

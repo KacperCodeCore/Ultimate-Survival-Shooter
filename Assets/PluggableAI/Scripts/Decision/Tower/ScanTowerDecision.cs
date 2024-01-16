@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "PluggableAI/Decisions/ScanTank")]
-public class ScanTankDecision : Decision
+[CreateAssetMenu(menuName = "PluggableAI/Decisions/ScanTower")]
+public class ScanTowerDecision : Decision
 {
     public override bool Decide(StateController controller)
     {

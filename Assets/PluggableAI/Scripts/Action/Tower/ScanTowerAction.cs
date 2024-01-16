@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "PluggableAI/Actions/Scan")]
-public class ScanTankAction : Action
+[CreateAssetMenu(menuName = "PluggableAI/Actions/ScanTower")]
+public class ScanTowerAction : Action
 {
     public override void Act(StateController controller)
     {   
