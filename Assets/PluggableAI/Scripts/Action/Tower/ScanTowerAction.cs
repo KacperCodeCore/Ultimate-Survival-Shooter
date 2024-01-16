@@ -12,7 +12,6 @@ public class ScanTowerAction : Action
     private void Scan(StateController controller)
     {
         var currentRot = controller.enemyStats.searchingTurnSpeed * Time.deltaTime;
-
         if(controller.Scan(currentRot, controller.enemyStats.scaleAngle))
             controller.transform.Rotate(0, currentRot, 0);
         else
