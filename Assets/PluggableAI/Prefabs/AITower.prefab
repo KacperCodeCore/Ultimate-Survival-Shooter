@@ -10014,7 +10014,7 @@ GameObject:
   - component: {fileID: 11488788}
   - component: {fileID: 2106398000529361104}
   m_Layer: 9
-  m_Name: 333AITower
+  m_Name: AITower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10360,6 +10360,12 @@ MonoBehaviour:
   stateTimeElapsed: 0
   currentRotation: 0
   lastRotation: 0
+  totalRotateAngle: 0
+  totalRotY: 0
+  sacnDir: 1
+  startRotY: 0
+  initLookAt: {x: 0, y: 0, z: 0}
+  rotRestored: 0
 --- !u!1 &173936
 GameObject:
   m_ObjectHideFlags: 0
@@ -10543,21 +10549,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6050183888539942402
-Transform:
+--- !u!224 &6050183888539942402
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6141792933972898226}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 0.77, z: -0.08}
+  m_LocalPosition: {x: 0, y: 0, z: -0.08}
   m_LocalScale: {x: 1.0442, y: 0.534244, z: 1.0442}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 477738}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.01, y: 0.77}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!33 &5475960427171845330
 MeshFilter:
   m_ObjectHideFlags: 0
