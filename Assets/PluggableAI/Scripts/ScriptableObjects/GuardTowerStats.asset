@@ -21,4 +21,4 @@ MonoBehaviour:
   attackDamage: 50
   searchDuration: 8
   searchingTurnSpeed: 120
-  scaleAngle: 90
+  scaleAngle: 120

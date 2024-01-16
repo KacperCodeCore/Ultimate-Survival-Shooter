@@ -121,7 +121,7 @@ public class StateController : MonoBehaviour
         else
         {
             totalRotY -= rotation;
-            if (totalRotY <= maxAngle)
+            if (totalRotY <= 0)
             {
                 sacnDir = true;
             }
