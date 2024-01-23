@@ -16,7 +16,7 @@ public class RestoreRotAction : Action
         var newRot = Vector3.RotateTowards(controller.transform.forward, target,
             Mathf.Deg2Rad * controller.enemyStats.searchingTurnSpeed * Time.deltaTime, 0.0f);
         var angle = Mathf.Abs(controller.startRotY - (controller.transform.rotation.y + newRot.y));
-        if (angle <= 0.0f || angle >= 359.0f)
+        if (angle <= 1.0f || angle >= 359.0f)
             controller.rotRestored = true;
 
 
