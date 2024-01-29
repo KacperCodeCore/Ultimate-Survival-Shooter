@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MinimapIcon : MonoBehaviour
 {
@@ -10,12 +11,12 @@ public class MinimapIcon : MonoBehaviour
     {
         RotateWithCamera = 1,
         ToDiscover = 2,
-        AlwaysOnMinimap = 16
+        AlwaysOnMinimap = 4
     }
 
     [SerializeField] private Behavior _behavior;
     [Header("Sprites")]
-    [SerializeField] private Material _defaultIcons;
+    [SerializeField] private Material _defaultIcon;
     [SerializeField] private Material _undiscoveredIcons;
 
     [Header("Reverences")]
@@ -24,14 +25,15 @@ public class MinimapIcon : MonoBehaviour
     [SerializeField] private Camera _minimapCamera;
 
     private float _renderDistance;
+    private UnityAction _updateAction;
+    private Vector3 _offset;
+    private float _distanceToPlayer = 0.0f;
 
     private void Start()
     {
         if(_player == null)
-        {
             _player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        }
         if(_player != null)
         {
             if(_playerIcon == null) 
@@ -46,12 +48,33 @@ public class MinimapIcon : MonoBehaviour
 
         if (_behavior.HasFlag(Behavior.RotateWithCamera))
             _updateAction += RotateWithCamera;
-
-
-
     }
-    private void LateUpdate()
+
+    private void RotateWithCamera()
     {
-
+        transform.rotation = _playerIcon.rotation;
     }
+
+    private void Discover()
+    {
+        if (_distanceToPlayer <= _renderDistance)
+        {
+            GetComponent<MeshRenderer>().material = _defaultIcon;
+            _updateAction -= Discover;
+        }
+    }
+    private void AlwaysOnMiniMap()
+    {
+        if (_distanceToPlayer > _renderDistance)
+        {
+            var newPosition = _player.position + (transform.parent.position - _player.position).normalized * _renderDistance;
+            newPosition.y = _offset.y;
+            transform.position = newPosition;
+        }
+        else 
+        {
+            transform.localPosition = _offset; 
+        }
+    }
+
 }

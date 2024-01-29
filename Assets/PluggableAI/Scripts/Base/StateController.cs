@@ -50,7 +50,7 @@ public class StateController : MonoBehaviour
         previousHp = iTankHealth.CurrentHealth;
         //tankHealth = GetComponent<TankHealth> ();
 
-        startRotY = transform.rotation.y;
+        startRotY = transform.rotation.eulerAngles.y;
         initLookAt = transform.position + (transform.forward * 3.0f);
 
         SetupAI(true, _patrolPointContainer != null ?
