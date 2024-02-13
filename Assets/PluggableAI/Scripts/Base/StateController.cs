@@ -76,10 +76,6 @@ public class StateController : MonoBehaviour
             return;
         stateTimeElapsed += Time.deltaTime;
         currentState.UpdateState(this);
-        ////if (iTankHealth != null)
-        ////{
-        ////    isHitDetected = tankHealth.HasHitDetecred; // to jest źle;
-        ////}
     }
 
     void OnDrawGizmos()

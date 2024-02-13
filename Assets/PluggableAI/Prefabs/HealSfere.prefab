@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1166841359633561205}
   - component: {fileID: 6688189098906954555}
   - component: {fileID: 6771046419671449997}
+  - component: {fileID: 5916581606835358084}
   m_Layer: 0
   m_Name: HealSfere
   m_TagString: Untagged
@@ -105,3 +106,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5916581606835358084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6647598266524229477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a0267a9a5109824f98e3df36c260279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healedTyper: -1
+  _healInterval: 1
+  _oneTimeHealAmount: 4
+  _hasUserLimit: 1
+  _userLimit: 2
+  _hasUseLimit: 1
+  _useLimit: 20
+  _hasHealLimit: 1
+  _healLimit: 200

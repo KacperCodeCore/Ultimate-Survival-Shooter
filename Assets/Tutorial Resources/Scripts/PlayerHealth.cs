@@ -23,6 +23,8 @@ public class PlayerHealth : MonoBehaviour, IHealth
 
     [SerializeField] private HeallableObjectType _objectType = HeallableObjectType.Player;
 
+    public Object spawnObjectOnDestroy;
+
 
     public Transform ObjectTransform => transform;
 

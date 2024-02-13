@@ -10300,6 +10300,8 @@ MonoBehaviour:
   m_FullHealthColor: {r: 0, g: 1, b: 0, a: 1}
   m_ZeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
   m_ExplosionPrefab: {fileID: 151086, guid: 6bc6d0dd8b8428e4ca316513f2cf13c6, type: 3}
+  spawnObjectOnDestroy: {fileID: 1854425252707494, guid: 653e2f14f19c61647b5818e1b1f294e7,
+    type: 3}
 --- !u!195 &195979757215206982
 NavMeshAgent:
   m_ObjectHideFlags: 0

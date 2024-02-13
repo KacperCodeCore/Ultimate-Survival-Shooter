@@ -23,6 +23,8 @@ public class ZombieHealth : MonoBehaviour, IHealth
     bool isSinking;                             // Whether the enemy has started sinking through the floor.
     AudioSource enemyAudio;
 
+    public Object spawnObjectOnDestroy;
+
 
 
     void Awake()
@@ -60,6 +62,12 @@ public class ZombieHealth : MonoBehaviour, IHealth
 
     void Death()
     {
+        // Spawn heal_kit
+        if (spawnObjectOnDestroy != null)
+        {
+            Instantiate(spawnObjectOnDestroy, transform.position, transform.rotation);
+        }
+
         // The enemy is dead.
         isDead = true;
 

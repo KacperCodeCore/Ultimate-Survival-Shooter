@@ -10556,6 +10556,8 @@ MonoBehaviour:
   m_FullHealthColor: {r: 0, g: 1, b: 0, a: 1}
   m_ZeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
   m_ExplosionPrefab: {fileID: 151086, guid: 6bc6d0dd8b8428e4ca316513f2cf13c6, type: 3}
+  spawnObjectOnDestroy: {fileID: 1854425252707494, guid: 653e2f14f19c61647b5818e1b1f294e7,
+    type: 3}
 --- !u!195 &195979757215206982
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -10607,7 +10609,8 @@ MonoBehaviour:
   enemyStats: {fileID: 11400000, guid: 7d36427061c3c3341b14c5ddc05b51b6, type: 2}
   eyes: {fileID: 4487636023762108}
   currentState: {fileID: 11400000, guid: 301fe967b230a9d49a3fbe32c691b958, type: 2}
-  _patrolPointContainer: {fileID: 0}
+  _patrolPointContainer: {fileID: 4689345990570408, guid: 653e2f14f19c61647b5818e1b1f294e7,
+    type: 3}
   navMeshAgent: {fileID: 0}
   tankShooting: {fileID: 0}
   wayPointList: []

@@ -16,7 +16,7 @@ public class TankHealth : MonoBehaviour, IHealth
     private float m_CurrentHealth;                      // How much health the tank currently has.
     private bool m_Dead;                                // Has the tank been reduced beyond zero health yet?
 
-
+    public Object spawnObjectOnDestroy;
 
     public float MaxHealth => throw new System.NotImplementedException();
 
@@ -62,6 +62,12 @@ public class TankHealth : MonoBehaviour, IHealth
 
     private void OnDeath ()
     {
+        // Spawn heal_kit
+        if (spawnObjectOnDestroy != null)
+        {
+            Instantiate(spawnObjectOnDestroy, transform.position, transform.rotation);
+        }
+
         // Set the flag so that this function is only called once.
         m_Dead = true;
 

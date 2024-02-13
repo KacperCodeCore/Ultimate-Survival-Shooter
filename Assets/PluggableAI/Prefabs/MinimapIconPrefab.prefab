@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1198689420619555397}
   - component: {fileID: 4586631888616699224}
   - component: {fileID: 8509740883988788740}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MinimapIconPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

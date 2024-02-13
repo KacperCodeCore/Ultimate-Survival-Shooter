@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 084144002a01e1f45bdf15db991af5c1, type: 3}
-  m_Name: GuardTowerStats
+  m_Name: Base_GuardTowerStats
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  lookRange: 10
+  lookRange: 15
   lookSphereCastRadius: 1
   attackRange: 10
-  attackRate: 1
+  attackRate: 0.3
   attackForce: 15
-  attackDamage: 50
+  attackDamage: 20
   searchDuration: 8
   searchingTurnSpeed: 120
-  scaleAngle: 180
+  scaleAngle: 359
